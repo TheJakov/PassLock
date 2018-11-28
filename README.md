@@ -1,5 +1,8 @@
 # PasswordLocker
-SIS projekt
+
+Projekt iz kolegija Sigurnost informacijskih sustava
+
+Opis projekta:
 
 Aplikacija omogućuje korisniku upis željene lozinke te njeno
 generiranje i spremanje u hashiranom formatu.

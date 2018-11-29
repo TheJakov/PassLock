@@ -1,4 +1,4 @@
-# PasswordLocker
+# PassLock
 
 Projekt iz kolegija Sigurnost informacijskih sustava
 

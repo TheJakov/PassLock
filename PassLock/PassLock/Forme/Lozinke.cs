@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace PassLock
 {
-    public partial class Form1 : Form
+    public partial class Lozinke : Form
     {
-        public Form1()
+        public Lozinke()
         {
             InitializeComponent();
-            this.Text = "PassLock";
         }
     }
 }

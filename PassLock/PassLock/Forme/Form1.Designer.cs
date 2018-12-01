@@ -67,6 +67,7 @@
             this.buttonPrijaviSe.TabIndex = 3;
             this.buttonPrijaviSe.Text = "Prijavi se";
             this.buttonPrijaviSe.UseVisualStyleBackColor = true;
+            this.buttonPrijaviSe.Click += new System.EventHandler(this.buttonPrijaviSe_Click);
             // 
             // buttonRegistrirajSe
             // 
@@ -76,6 +77,7 @@
             this.buttonRegistrirajSe.TabIndex = 4;
             this.buttonRegistrirajSe.Text = "Registriraj se";
             this.buttonRegistrirajSe.UseVisualStyleBackColor = true;
+            this.buttonRegistrirajSe.Click += new System.EventHandler(this.buttonRegistrirajSe_Click);
             // 
             // Form1
             // 
@@ -89,6 +91,7 @@
             this.Controls.Add(this.labelaNaslov);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Leave += new System.EventHandler(this.Form1_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

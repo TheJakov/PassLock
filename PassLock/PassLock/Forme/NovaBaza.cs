@@ -43,6 +43,10 @@ namespace PassLock.Forme
                     SQLiteCommand command = new SQLiteCommand(sql, konekcija);
                     command.ExecuteNonQuery();
                     konekcija.Close();
+
+                    Lozinke formaLozinke = new Lozinke();
+                    formaLozinke.ShowDialog();
+                    this.Close();
                 }
             }
             else

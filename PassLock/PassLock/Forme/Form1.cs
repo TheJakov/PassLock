@@ -23,26 +23,9 @@ namespace PassLock
 
         private void buttonNovaBaza_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "SQLite file|*.sqlite";
-            saveFileDialog.Title = "Save an SQLite File";
-            saveFileDialog.ShowDialog();
-
-            if (saveFileDialog.FileName != "")
-            {
-                SQLiteConnection.CreateFile(saveFileDialog.FileName);
-        
-                this.Text = Path.GetFullPath(saveFileDialog.FileName).ToString();
-
-                SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + Path.GetFullPath(saveFileDialog.FileName).ToString() + ";Version=3");
-                konekcija.Open();
-
-                string sql = "CREATE TABLE podaci (id INTEGER PRIMARY KEY UNIQUE NOT NULL, naziv TEXT NOT NULL, lozinka TEXT NOT NULL)";
-
-                SQLiteCommand command = new SQLiteCommand(sql, konekcija);
-                command.ExecuteNonQuery();
-                konekcija.Close();
-            }
+            Forme.NovaBaza novaBaza = new Forme.NovaBaza(); 
+            novaBaza.ShowDialog();
+            this.Close();
         }
     }
 }

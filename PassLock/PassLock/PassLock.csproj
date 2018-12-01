@@ -76,10 +76,19 @@
     <Compile Include="Forme\Lozinke.Designer.cs">
       <DependentUpon>Lozinke.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\NovaBaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\NovaBaza.Designer.cs">
+      <DependentUpon>NovaBaza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\NovaBaza.resx">
+      <DependentUpon>NovaBaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

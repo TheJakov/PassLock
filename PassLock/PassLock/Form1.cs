@@ -15,6 +15,7 @@ namespace PassLock
         public Form1()
         {
             InitializeComponent();
+            this.Text = "PassLock";
         }
     }
 }

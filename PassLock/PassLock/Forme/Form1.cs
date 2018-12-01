@@ -31,20 +31,17 @@ namespace PassLock
             if (saveFileDialog.FileName != "")
             {
                 SQLiteConnection.CreateFile(saveFileDialog.FileName);
-                //FileStream fs = (FileStream)saveFileDialog.OpenFile();
         
                 this.Text = Path.GetFullPath(saveFileDialog.FileName).ToString();
 
                 SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + Path.GetFullPath(saveFileDialog.FileName).ToString() + ";Version=3");
                 konekcija.Open();
 
-                string sql = "CREATE TABLE podaci (id INTEGER PRIMARY KEY UNIQUE NOT NULL, naziv TEXT NOT NULL, lozinkaSHA256 TEXT NOT NULL)";
+                string sql = "CREATE TABLE podaci (id INTEGER PRIMARY KEY UNIQUE NOT NULL, naziv TEXT NOT NULL, lozinka TEXT NOT NULL)";
 
                 SQLiteCommand command = new SQLiteCommand(sql, konekcija);
                 command.ExecuteNonQuery();
                 konekcija.Close();
-
-                //fs.Close();
             }
         }
     }

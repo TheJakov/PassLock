@@ -31,9 +31,8 @@ namespace PassLock
             if (saveFileDialog.FileName != "")
             {
                 SQLiteConnection.CreateFile(saveFileDialog.FileName);
-                System.IO.FileStream fs =
-                   (System.IO.FileStream)saveFileDialog.OpenFile();
-
+                //FileStream fs = (FileStream)saveFileDialog.OpenFile();
+        
                 this.Text = Path.GetFullPath(saveFileDialog.FileName).ToString();
 
                 SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + Path.GetFullPath(saveFileDialog.FileName).ToString() + ";Version=3");
@@ -45,7 +44,7 @@ namespace PassLock
                 command.ExecuteNonQuery();
                 konekcija.Close();
 
-                fs.Close();
+                //fs.Close();
             }
         }
     }

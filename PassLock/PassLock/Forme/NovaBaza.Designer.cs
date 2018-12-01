@@ -39,9 +39,9 @@
             // 
             this.txtLozinka1.Location = new System.Drawing.Point(21, 59);
             this.txtLozinka1.Name = "txtLozinka1";
-            this.txtLozinka1.PasswordChar = '*';
             this.txtLozinka1.Size = new System.Drawing.Size(258, 22);
             this.txtLozinka1.TabIndex = 0;
+            this.txtLozinka1.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -66,9 +66,9 @@
             // 
             this.txtLozinka2.Location = new System.Drawing.Point(21, 119);
             this.txtLozinka2.Name = "txtLozinka2";
-            this.txtLozinka2.PasswordChar = '*';
             this.txtLozinka2.Size = new System.Drawing.Size(258, 22);
             this.txtLozinka2.TabIndex = 2;
+            this.txtLozinka2.UseSystemPasswordChar = true;
             // 
             // buttonPotvrdi
             // 

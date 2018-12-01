@@ -51,7 +51,7 @@ namespace PassLock.Forme
             }
             else
             {
-                MessageBox.Show("Upozorenje !", "Lozinke se ne podudaraju !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lozinke se ne podudaraju !", "Upozorenje !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLozinka1.Clear();
                 txtLozinka2.Clear();
             }

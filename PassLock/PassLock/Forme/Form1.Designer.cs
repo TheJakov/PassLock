@@ -70,7 +70,9 @@
             this.Controls.Add(this.buttonNovaBaza);
             this.Controls.Add(this.buttonPrijaviSe);
             this.Controls.Add(this.labelaNaslov);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

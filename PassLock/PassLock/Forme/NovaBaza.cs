@@ -45,6 +45,7 @@ namespace PassLock.Forme
                     konekcija.Close();
 
                     Lozinke formaLozinke = new Lozinke(txtLozinka1.Text,putanja);
+                    this.Hide();
                     formaLozinke.ShowDialog();
                     this.Close();
                 }

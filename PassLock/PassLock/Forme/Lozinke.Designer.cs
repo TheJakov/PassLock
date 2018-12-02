@@ -28,37 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvPodaci = new System.Windows.Forms.DataGridView();
+            this.buttonOdjava = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPodaci
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(79, 64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(508, 211);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvPodaci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPodaci.Location = new System.Drawing.Point(213, 70);
+            this.dgvPodaci.Name = "dgvPodaci";
+            this.dgvPodaci.RowTemplate.Height = 24;
+            this.dgvPodaci.Size = new System.Drawing.Size(809, 470);
+            this.dgvPodaci.TabIndex = 0;
+            // 
+            // buttonOdjava
+            // 
+            this.buttonOdjava.BackColor = System.Drawing.Color.Coral;
+            this.buttonOdjava.Location = new System.Drawing.Point(896, 16);
+            this.buttonOdjava.Name = "buttonOdjava";
+            this.buttonOdjava.Size = new System.Drawing.Size(126, 42);
+            this.buttonOdjava.TabIndex = 11;
+            this.buttonOdjava.Text = "ODJAVI SE";
+            this.buttonOdjava.UseVisualStyleBackColor = false;
+            this.buttonOdjava.Click += new System.EventHandler(this.buttonOdjava_Click);
             // 
             // Lozinke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1034, 565);
+            this.Controls.Add(this.buttonOdjava);
+            this.Controls.Add(this.dgvPodaci);
             this.MaximizeBox = false;
             this.Name = "Lozinke";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lozinke";
+            this.Text = "Moji podaci";
             this.Load += new System.EventHandler(this.Lozinke_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPodaci;
+        private System.Windows.Forms.Button buttonOdjava;
     }
 }

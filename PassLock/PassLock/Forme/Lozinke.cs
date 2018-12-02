@@ -33,13 +33,27 @@ namespace PassLock
             SQLiteConnection conn = new SQLiteConnection(dataSource);
             conn.Open();
 
-            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM podaci",conn);
+            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM podaci", conn);
             DataSet ds = new DataSet();
 
             dataAdapter.Fill(ds, "Info");
-            dataGridView1.DataSource = ds.Tables[0];
+            dgvPodaci.DataSource = ds.Tables[0];
+            dgvPodaci.Columns[0].HeaderText = "Redni broj";
+            dgvPodaci.Columns[0].Width = 89;
+            dgvPodaci.Columns[1].HeaderText = "Naziv";
+            dgvPodaci.Columns[1].Width = 139;
+            dgvPodaci.Columns[2].HeaderText = "Lozinka";
+            dgvPodaci.Columns[2].Width = 336;
 
-            conn.Clone();
+            conn.Close();
+        }
+
+        private void buttonOdjava_Click(object sender, EventArgs e)
+        {
+            Form1 pocetnaForma = new Form1();
+            this.Hide();
+            pocetnaForma.ShowDialog();
+            this.Close();
         }
     }
 }

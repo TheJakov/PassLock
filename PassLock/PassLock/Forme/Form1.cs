@@ -23,14 +23,14 @@ namespace PassLock
 
         private void buttonNovaBaza_Click(object sender, EventArgs e)
         {
-            Forme.NovaBaza novaBaza = new Forme.NovaBaza(); 
+            Forme.NovaBaza novaBaza = new Forme.NovaBaza();
+            this.Hide();
             novaBaza.ShowDialog();
             this.Close();
         }
         
         private void buttonOtvoriBazu_Click(object sender, EventArgs e)
         {
-            //stavio sam da je file .db, češće se koristi nego .sqlite
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "File|*.db";
             openFileDialog1.Title = "Select file";
@@ -40,7 +40,10 @@ namespace PassLock
                 string putanja = Path.GetFullPath(openFileDialog1.FileName).ToString();
 
                 Forme.UnosLozinkeOdabraneBaze novaForma = new Forme.UnosLozinkeOdabraneBaze(putanja);
+                this.Hide();
                 novaForma.ShowDialog();
+                this.Close();
+                
             }
         }
     }

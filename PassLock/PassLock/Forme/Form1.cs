@@ -27,5 +27,21 @@ namespace PassLock
             novaBaza.ShowDialog();
             this.Close();
         }
+        
+        private void buttonOtvoriBazu_Click(object sender, EventArgs e)
+        {
+            //stavio sam da je file .db, češće se koristi nego .sqlite
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "File|*.db";
+            openFileDialog1.Title = "Select file";
+  
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string putanjaDoBaze = Path.GetFullPath(openFileDialog1.FileName).ToString();
+
+                Forme.UnosLozinkeOdabraneBaze novaForma = new Forme.UnosLozinkeOdabraneBaze(putanjaDoBaze);
+                novaForma.ShowDialog();
+            }
+        }
     }
 }

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.labelaNaslov = new System.Windows.Forms.Label();
-            this.buttonPrijaviSe = new System.Windows.Forms.Button();
+            this.buttonOtvoriBazu = new System.Windows.Forms.Button();
             this.buttonNovaBaza = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // labelaNaslov
@@ -43,14 +44,15 @@
             this.labelaNaslov.TabIndex = 0;
             this.labelaNaslov.Text = "PassLock";
             // 
-            // buttonPrijaviSe
+            // buttonOtvoriBazu
             // 
-            this.buttonPrijaviSe.Location = new System.Drawing.Point(108, 98);
-            this.buttonPrijaviSe.Name = "buttonPrijaviSe";
-            this.buttonPrijaviSe.Size = new System.Drawing.Size(103, 28);
-            this.buttonPrijaviSe.TabIndex = 3;
-            this.buttonPrijaviSe.Text = "Otvori bazu";
-            this.buttonPrijaviSe.UseVisualStyleBackColor = true;
+            this.buttonOtvoriBazu.Location = new System.Drawing.Point(108, 98);
+            this.buttonOtvoriBazu.Name = "buttonOtvoriBazu";
+            this.buttonOtvoriBazu.Size = new System.Drawing.Size(103, 28);
+            this.buttonOtvoriBazu.TabIndex = 3;
+            this.buttonOtvoriBazu.Text = "Otvori bazu";
+            this.buttonOtvoriBazu.UseVisualStyleBackColor = true;
+            this.buttonOtvoriBazu.Click += new System.EventHandler(this.buttonOtvoriBazu_Click);
             // 
             // buttonNovaBaza
             // 
@@ -62,13 +64,17 @@
             this.buttonNovaBaza.UseVisualStyleBackColor = true;
             this.buttonNovaBaza.Click += new System.EventHandler(this.buttonNovaBaza_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 271);
             this.Controls.Add(this.buttonNovaBaza);
-            this.Controls.Add(this.buttonPrijaviSe);
+            this.Controls.Add(this.buttonOtvoriBazu);
             this.Controls.Add(this.labelaNaslov);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -82,8 +88,9 @@
         #endregion
 
         private System.Windows.Forms.Label labelaNaslov;
-        private System.Windows.Forms.Button buttonPrijaviSe;
+        private System.Windows.Forms.Button buttonOtvoriBazu;
         private System.Windows.Forms.Button buttonNovaBaza;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

@@ -24,7 +24,7 @@ namespace PassLock.Forme
             if (txtLozinka1.Text == txtLozinka2.Text)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "SQLite file|*.sqlite";
+                saveFileDialog.Filter = "File|*.db";
                 saveFileDialog.Title = "Save an SQLite File";
                 saveFileDialog.ShowDialog();
 

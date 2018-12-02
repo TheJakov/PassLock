@@ -82,6 +82,12 @@
     <Compile Include="Forme\NovaBaza.Designer.cs">
       <DependentUpon>NovaBaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\UnosLozinkeOdabraneBaze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\UnosLozinkeOdabraneBaze.Designer.cs">
+      <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\Form1.resx">
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\NovaBaza.resx">
       <DependentUpon>NovaBaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\UnosLozinkeOdabraneBaze.resx">
+      <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

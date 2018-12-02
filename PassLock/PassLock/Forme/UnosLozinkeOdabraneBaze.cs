@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PassLock.Forme;
+using PassLock.Klase;
 
 namespace PassLock.Forme
 {
     public partial class UnosLozinkeOdabraneBaze : Form
     {
+        Konekcija mojaKonekcija = new Konekcija();
         private string putanja;
         public UnosLozinkeOdabraneBaze(string putanja)
         {
@@ -25,17 +28,15 @@ namespace PassLock.Forme
             string lozinka = txtLozinka.Text;
             if(lozinka.Length!=0)
             {
-                string dataSource = @"Data Source="+putanja+";Version=3;Page Size=4096;Password="+lozinka+";";
-                SQLiteConnection conn = new SQLiteConnection(dataSource);
-                conn.Open();
+                mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
 
                 try
                 {
                     //pokusaj pristupa podacima
                     string sql = "SELECT * FROM podaci";
-                    SQLiteCommand command = new SQLiteCommand(sql, conn);
+                    SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);
                     command.ExecuteNonQuery();                    
-                    conn.Close();
+                    mojaKonekcija.conn.Close();
 
                     Lozinke novaForma = new Lozinke(lozinka,putanja);
                     this.Hide();

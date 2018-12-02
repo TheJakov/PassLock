@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
 using System.Data.SqlClient;
+using PassLock.Klase;
+using PassLock.Forme;
 
 namespace PassLock
 {

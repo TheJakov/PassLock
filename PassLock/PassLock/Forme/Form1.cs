@@ -37,9 +37,9 @@ namespace PassLock
   
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string putanjaDoBaze = Path.GetFullPath(openFileDialog1.FileName).ToString();
+                string putanja = Path.GetFullPath(openFileDialog1.FileName).ToString();
 
-                Forme.UnosLozinkeOdabraneBaze novaForma = new Forme.UnosLozinkeOdabraneBaze(putanjaDoBaze);
+                Forme.UnosLozinkeOdabraneBaze novaForma = new Forme.UnosLozinkeOdabraneBaze(putanja);
                 novaForma.ShowDialog();
             }
         }

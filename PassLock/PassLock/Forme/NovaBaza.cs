@@ -32,9 +32,9 @@ namespace PassLock.Forme
                 {
                     SQLiteConnection.CreateFile(saveFileDialog.FileName);
 
-                    this.Text = Path.GetFullPath(saveFileDialog.FileName).ToString();
+                    string putanja = Path.GetFullPath(saveFileDialog.FileName).ToString();
 
-                    SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + Path.GetFullPath(saveFileDialog.FileName).ToString() + ";Version=3");
+                    SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + putanja + ";Version=3");
                     konekcija.SetPassword(txtLozinka1.Text);
                     konekcija.Open();
 
@@ -44,7 +44,7 @@ namespace PassLock.Forme
                     command.ExecuteNonQuery();
                     konekcija.Close();
 
-                    Lozinke formaLozinke = new Lozinke();
+                    Lozinke formaLozinke = new Lozinke(txtLozinka1.Text,putanja);
                     formaLozinke.ShowDialog();
                     this.Close();
                 }

@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PassLock.Forme;
+using PassLock.Klase;
 
 namespace PassLock
 {
     public partial class Lozinke : Form
     {
+        Konekcija mojaKonekcija = new Konekcija();
+
         private string lozinka;
         private string putanja;
         public Lozinke()
@@ -28,11 +32,31 @@ namespace PassLock
 
         private void Lozinke_Load(object sender, EventArgs e)
         {
-            //testni prikaz
-            string dataSource = @"Data Source=" + putanja + ";Version=3;Page Size=1024;Password=" + lozinka + ";";
-            SQLiteConnection conn = new SQLiteConnection(dataSource);
-            conn.Open();
+            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            OsvjeziPodatke(mojaKonekcija.conn);
+            mojaKonekcija.ZatvoriKonekciju();
+        }
 
+        private void buttonOdjava_Click(object sender, EventArgs e)
+        {
+            Form1 pocetnaForma = new Form1();
+            this.Hide();
+            pocetnaForma.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonDodaj_Click(object sender, EventArgs e)
+        {
+            NoviPodatak noviPodatak = new NoviPodatak(lozinka, putanja);
+            noviPodatak.ShowDialog();
+
+            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            OsvjeziPodatke(mojaKonekcija.conn);
+            mojaKonekcija.ZatvoriKonekciju();
+        }
+
+        private void OsvjeziPodatke(SQLiteConnection conn)
+        {
             SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM podaci", conn);
             DataSet ds = new DataSet();
 
@@ -44,16 +68,6 @@ namespace PassLock
             dgvPodaci.Columns[1].Width = 139;
             dgvPodaci.Columns[2].HeaderText = "Lozinka";
             dgvPodaci.Columns[2].Width = 336;
-
-            conn.Close();
-        }
-
-        private void buttonOdjava_Click(object sender, EventArgs e)
-        {
-            Form1 pocetnaForma = new Form1();
-            this.Hide();
-            pocetnaForma.ShowDialog();
-            this.Close();
         }
     }
 }

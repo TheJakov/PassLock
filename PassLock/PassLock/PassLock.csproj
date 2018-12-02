@@ -82,12 +82,19 @@
     <Compile Include="Forme\NovaBaza.Designer.cs">
       <DependentUpon>NovaBaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\NoviPodatak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\NoviPodatak.Designer.cs">
+      <DependentUpon>NoviPodatak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\UnosLozinkeOdabraneBaze.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\UnosLozinkeOdabraneBaze.Designer.cs">
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klase\Konekcija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\Form1.resx">
@@ -98,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\NovaBaza.resx">
       <DependentUpon>NovaBaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\NoviPodatak.resx">
+      <DependentUpon>NoviPodatak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\UnosLozinkeOdabraneBaze.resx">
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
@@ -125,9 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Klase\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

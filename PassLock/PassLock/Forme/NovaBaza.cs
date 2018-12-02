@@ -57,5 +57,13 @@ namespace PassLock.Forme
                 txtLozinka2.Clear();
             }
         }
+
+        private void buttonOdustani_Click(object sender, EventArgs e)
+        {
+            Form1 pocetnaForma = new Form1();
+            this.Hide();
+            pocetnaForma.ShowDialog();
+            this.Close();
+        }
     }
 }

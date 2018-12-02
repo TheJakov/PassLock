@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka2 = new System.Windows.Forms.TextBox();
             this.buttonPotvrdi = new System.Windows.Forms.Button();
+            this.buttonOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLozinka1
@@ -75,7 +76,7 @@
             // buttonPotvrdi
             // 
             this.buttonPotvrdi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(170, 205);
+            this.buttonPotvrdi.Location = new System.Drawing.Point(258, 210);
             this.buttonPotvrdi.Name = "buttonPotvrdi";
             this.buttonPotvrdi.Size = new System.Drawing.Size(126, 39);
             this.buttonPotvrdi.TabIndex = 4;
@@ -83,11 +84,23 @@
             this.buttonPotvrdi.UseVisualStyleBackColor = false;
             this.buttonPotvrdi.Click += new System.EventHandler(this.buttonPotvrdi_Click);
             // 
+            // buttonOdustani
+            // 
+            this.buttonOdustani.BackColor = System.Drawing.Color.Coral;
+            this.buttonOdustani.Location = new System.Drawing.Point(67, 210);
+            this.buttonOdustani.Name = "buttonOdustani";
+            this.buttonOdustani.Size = new System.Drawing.Size(126, 39);
+            this.buttonOdustani.TabIndex = 11;
+            this.buttonOdustani.Text = "ODUSTANI";
+            this.buttonOdustani.UseVisualStyleBackColor = false;
+            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
+            // 
             // NovaBaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 277);
+            this.Controls.Add(this.buttonOdustani);
             this.Controls.Add(this.buttonPotvrdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLozinka2);
@@ -109,5 +122,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLozinka2;
         private System.Windows.Forms.Button buttonPotvrdi;
+        private System.Windows.Forms.Button buttonOdustani;
     }
 }

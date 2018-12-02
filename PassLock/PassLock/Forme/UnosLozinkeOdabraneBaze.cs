@@ -53,12 +53,6 @@ namespace PassLock.Forme
                 MessageBox.Show("Morate lozinku upisati!","Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLozinka.Clear();
             }
-            //Upisuje podatke u bazu
-            /*
-            string sql2 = "INSERT INTO podaci(naziv,lozinka) values('test','test')";
-            SQLiteCommand command2 = new SQLiteCommand(sql2, conn);
-            command2.ExecuteNonQuery();
-            */
         }
 
         private void buttonOdustani_Click(object sender, EventArgs e)

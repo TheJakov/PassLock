@@ -47,6 +47,7 @@
             this.dgvPodaci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPodaci.Size = new System.Drawing.Size(809, 470);
             this.dgvPodaci.TabIndex = 0;
+            this.dgvPodaci.SelectionChanged += new System.EventHandler(this.dgvPodaci_SelectionChanged);
             // 
             // buttonOdjava
             // 

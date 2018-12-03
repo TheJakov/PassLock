@@ -19,6 +19,10 @@ namespace PassLock
 
         private string lozinka;
         private string putanja;
+
+        private string odabranaLozinka;
+        private int idPodatak;
+
         public Lozinke()
         {
             InitializeComponent();
@@ -68,6 +72,13 @@ namespace PassLock
             dgvPodaci.Columns[1].Width = 139;
             dgvPodaci.Columns[2].HeaderText = "Lozinka";
             dgvPodaci.Columns[2].Width = 336;
+        }
+
+        private void dgvPodaci_SelectionChanged(object sender, EventArgs e)
+        {
+            odabranaLozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
+            idPodatak = int.Parse(dgvPodaci.CurrentRow.Cells[0].Value.ToString());
+
         }
     }
 }

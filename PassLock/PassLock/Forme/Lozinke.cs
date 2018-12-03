@@ -94,10 +94,7 @@ namespace PassLock
                 nazivLozinke = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
                 if (MessageBox.Show("Želite li stvarno obrisati lozinku sa sifrom: " + idPodatak + " i nazivom "+nazivLozinke+" ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //izbrisi lozinku
                     IzbrisiPodatak();
-                    //izbrisi kraj
-
                     OsvjeziPodatke(mojaKonekcija.conn);
                 }
             }

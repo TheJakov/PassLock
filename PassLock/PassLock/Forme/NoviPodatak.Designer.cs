@@ -34,12 +34,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.buttonOdustani = new System.Windows.Forms.Button();
+            this.trackBarDuljinaLozinke = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelDuljinaZnakova = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDuljinaLozinke)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPotvrdi
             // 
             this.buttonPotvrdi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(263, 241);
+            this.buttonPotvrdi.Location = new System.Drawing.Point(292, 314);
             this.buttonPotvrdi.Name = "buttonPotvrdi";
             this.buttonPotvrdi.Size = new System.Drawing.Size(126, 39);
             this.buttonPotvrdi.TabIndex = 9;
@@ -52,7 +56,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 126);
+            this.label2.Location = new System.Drawing.Point(96, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(234, 26);
             this.label2.TabIndex = 8;
@@ -60,7 +64,7 @@
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(72, 155);
+            this.txtLozinka.Location = new System.Drawing.Point(101, 146);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(317, 22);
             this.txtLozinka.TabIndex = 7;
@@ -70,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 46);
+            this.label1.Location = new System.Drawing.Point(96, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 26);
             this.label1.TabIndex = 6;
@@ -78,7 +82,7 @@
             // 
             // txtNaziv
             // 
-            this.txtNaziv.Location = new System.Drawing.Point(72, 75);
+            this.txtNaziv.Location = new System.Drawing.Point(101, 66);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(317, 22);
             this.txtNaziv.TabIndex = 5;
@@ -86,7 +90,7 @@
             // buttonOdustani
             // 
             this.buttonOdustani.BackColor = System.Drawing.Color.Coral;
-            this.buttonOdustani.Location = new System.Drawing.Point(72, 241);
+            this.buttonOdustani.Location = new System.Drawing.Point(101, 314);
             this.buttonOdustani.Name = "buttonOdustani";
             this.buttonOdustani.Size = new System.Drawing.Size(126, 39);
             this.buttonOdustani.TabIndex = 11;
@@ -94,11 +98,47 @@
             this.buttonOdustani.UseVisualStyleBackColor = false;
             this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
             // 
+            // trackBarDuljinaLozinke
+            // 
+            this.trackBarDuljinaLozinke.Location = new System.Drawing.Point(101, 234);
+            this.trackBarDuljinaLozinke.Maximum = 64;
+            this.trackBarDuljinaLozinke.Minimum = 1;
+            this.trackBarDuljinaLozinke.Name = "trackBarDuljinaLozinke";
+            this.trackBarDuljinaLozinke.Size = new System.Drawing.Size(317, 56);
+            this.trackBarDuljinaLozinke.TabIndex = 12;
+            this.trackBarDuljinaLozinke.Value = 64;
+            this.trackBarDuljinaLozinke.ValueChanged += new System.EventHandler(this.trackBarDuljinaLozinke_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(96, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 26);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Duljina lozinke:";
+            // 
+            // labelDuljinaZnakova
+            // 
+            this.labelDuljinaZnakova.AutoSize = true;
+            this.labelDuljinaZnakova.BackColor = System.Drawing.Color.Transparent;
+            this.labelDuljinaZnakova.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDuljinaZnakova.Location = new System.Drawing.Point(261, 193);
+            this.labelDuljinaZnakova.Name = "labelDuljinaZnakova";
+            this.labelDuljinaZnakova.Size = new System.Drawing.Size(36, 26);
+            this.labelDuljinaZnakova.TabIndex = 14;
+            this.labelDuljinaZnakova.Text = "64";
+            // 
             // NoviPodatak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 341);
+            this.ClientSize = new System.Drawing.Size(532, 412);
+            this.Controls.Add(this.labelDuljinaZnakova);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.trackBarDuljinaLozinke);
             this.Controls.Add(this.buttonOdustani);
             this.Controls.Add(this.buttonPotvrdi);
             this.Controls.Add(this.label2);
@@ -106,11 +146,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNaziv);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(475, 388);
             this.MinimumSize = new System.Drawing.Size(475, 388);
             this.Name = "NoviPodatak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NoviPodatak";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDuljinaLozinke)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +164,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Button buttonOdustani;
+        private System.Windows.Forms.TrackBar trackBarDuljinaLozinke;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelDuljinaZnakova;
     }
 }

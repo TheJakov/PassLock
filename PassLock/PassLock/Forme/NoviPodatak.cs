@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace PassLock.Forme
 
         private string lozinka;
         private string putanja;
+        private int duljinaLozinke = 64;
         public NoviPodatak()
         {
             InitializeComponent();
@@ -51,14 +53,42 @@ namespace PassLock.Forme
                 txtNaziv.Clear();
                 txtLozinka.Clear();
             }
-            //enkripcija
 
-            string sql = "INSERT INTO podaci(naziv,lozinka) values('"+txtNaziv.Text+"','"+txtLozinka.Text+"')";
+            string kriptiranaLozinka = Enkriptiraj(txtLozinka.Text);
+            string sql = "INSERT INTO podaci(naziv,lozinka) values('"+txtNaziv.Text+"','"+kriptiranaLozinka+"')";
             SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);
             command.ExecuteNonQuery();
 
             mojaKonekcija.ZatvoriKonekciju();
             this.Close();
+        }
+
+        public string Enkriptiraj(string lozinka)
+        {
+
+            string obradbeniPodatak = lozinka + DateTime.Now.ToString();
+            // Create a SHA256   
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obradbeniPodatak));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+
+                string finalLozinka = builder.ToString().Substring(0, duljinaLozinke);
+                return finalLozinka;
+            }
+        }
+
+        private void trackBarDuljinaLozinke_ValueChanged(object sender, EventArgs e)
+        {
+            labelDuljinaZnakova.Text = trackBarDuljinaLozinke.Value.ToString();
+            duljinaLozinke = trackBarDuljinaLozinke.Value;
         }
     }
 }

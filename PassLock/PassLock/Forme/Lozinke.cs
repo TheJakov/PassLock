@@ -80,5 +80,10 @@ namespace PassLock
             idPodatak = int.Parse(dgvPodaci.CurrentRow.Cells[0].Value.ToString());
 
         }
+
+        private void buttonKopirajLozinku_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(odabranaLozinka);
+        }
     }
 }

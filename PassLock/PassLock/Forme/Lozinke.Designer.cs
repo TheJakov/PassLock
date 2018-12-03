@@ -31,6 +31,7 @@
             this.dgvPodaci = new System.Windows.Forms.DataGridView();
             this.buttonOdjava = new System.Windows.Forms.Button();
             this.buttonDodaj = new System.Windows.Forms.Button();
+            this.buttonKopirajLozinku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // buttonDodaj
             // 
             this.buttonDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonDodaj.Location = new System.Drawing.Point(30, 83);
+            this.buttonDodaj.Location = new System.Drawing.Point(23, 150);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(156, 49);
             this.buttonDodaj.TabIndex = 12;
@@ -71,11 +72,23 @@
             this.buttonDodaj.UseVisualStyleBackColor = false;
             this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
             // 
+            // buttonKopirajLozinku
+            // 
+            this.buttonKopirajLozinku.BackColor = System.Drawing.Color.Transparent;
+            this.buttonKopirajLozinku.Location = new System.Drawing.Point(23, 83);
+            this.buttonKopirajLozinku.Name = "buttonKopirajLozinku";
+            this.buttonKopirajLozinku.Size = new System.Drawing.Size(156, 49);
+            this.buttonKopirajLozinku.TabIndex = 13;
+            this.buttonKopirajLozinku.Text = "KOPIRAJ LOZINKU";
+            this.buttonKopirajLozinku.UseVisualStyleBackColor = false;
+            this.buttonKopirajLozinku.Click += new System.EventHandler(this.buttonKopirajLozinku_Click);
+            // 
             // Lozinke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 565);
+            this.Controls.Add(this.buttonKopirajLozinku);
             this.Controls.Add(this.buttonDodaj);
             this.Controls.Add(this.buttonOdjava);
             this.Controls.Add(this.dgvPodaci);
@@ -96,5 +109,6 @@
         private System.Windows.Forms.DataGridView dgvPodaci;
         private System.Windows.Forms.Button buttonOdjava;
         private System.Windows.Forms.Button buttonDodaj;
+        private System.Windows.Forms.Button buttonKopirajLozinku;
     }
 }

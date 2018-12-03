@@ -46,9 +46,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(42, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 26);
+            this.label2.Size = new System.Drawing.Size(212, 26);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Upišite željenu lozinku:";
+            this.label2.Text = "Upišite novu lozinku:";
             // 
             // txtLozinka
             // 

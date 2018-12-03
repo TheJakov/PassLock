@@ -16,6 +16,7 @@ namespace PassLock.Forme
     public partial class IzmjeniPodatak : Form
     {
         Konekcija mojaKonekcija = new Konekcija();
+        Enkripcija enkriptor = new Enkripcija();
         private string lozinka;
         private string putanja;
         Podatak mojPodatak;
@@ -60,8 +61,13 @@ namespace PassLock.Forme
                         txtNaziv.Clear();
                         txtLozinka.Clear();
                     }
+                    string lozinkaUpdate = txtLozinka.Text;
+                    if (checkBoxEnkriptiraj.Checked)
+                    {
+                        lozinkaUpdate = enkriptor.Enkriptiraj(txtLozinka.Text, 64);
+                    }
                     string sqlUpdate = "UPDATE podaci " +
-                         "SET naziv = '" + txtNaziv.Text + "', lozinka = '" + txtLozinka.Text + "' " +
+                         "SET naziv = '" + txtNaziv.Text + "', lozinka = '" + lozinkaUpdate + "' " +
                          "WHERE id = "+txtRedniBroj.Text+";";
                     SQLiteCommand command = new SQLiteCommand(sqlUpdate, mojaKonekcija.conn);
                     command.ExecuteNonQuery();

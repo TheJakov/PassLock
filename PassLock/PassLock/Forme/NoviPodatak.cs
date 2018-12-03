@@ -17,6 +17,7 @@ namespace PassLock.Forme
     public partial class NoviPodatak : Form
     {
         Konekcija mojaKonekcija = new Konekcija();
+        Enkripcija enkriptor = new Enkripcija();
 
         private string lozinka;
         private string putanja;
@@ -54,7 +55,7 @@ namespace PassLock.Forme
                 txtLozinka.Clear();
             }
 
-            string kriptiranaLozinka = Enkriptiraj(txtLozinka.Text);
+            string kriptiranaLozinka = enkriptor.Enkriptiraj(txtLozinka.Text, duljinaLozinke);
             string sql = "INSERT INTO podaci(naziv,lozinka) values('"+txtNaziv.Text+"','"+kriptiranaLozinka+"')";
             SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);
             command.ExecuteNonQuery();
@@ -62,26 +63,6 @@ namespace PassLock.Forme
             mojaKonekcija.ZatvoriKonekciju();
             this.Close();
         }
-
-        public string Enkriptiraj(string lozinka)
-        {
-            string obradbeniPodatak = lozinka + DateTime.Now.ToString();
-
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obradbeniPodatak));
-
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-
-                string finalLozinka = builder.ToString().Substring(0, duljinaLozinke);
-                return finalLozinka;
-            }
-        }
-
         private void trackBarDuljinaLozinke_ValueChanged(object sender, EventArgs e)
         {
             labelDuljinaZnakova.Text = trackBarDuljinaLozinke.Value.ToString();

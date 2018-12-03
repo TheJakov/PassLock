@@ -36,6 +36,7 @@
             this.txtRedniBroj = new System.Windows.Forms.TextBox();
             this.buttonOdustani = new System.Windows.Forms.Button();
             this.buttonPotvrdi = new System.Windows.Forms.Button();
+            this.checkBoxEnkriptiraj = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label2
@@ -113,11 +114,22 @@
             this.buttonPotvrdi.UseVisualStyleBackColor = false;
             this.buttonPotvrdi.Click += new System.EventHandler(this.buttonPotvrdi_Click);
             // 
+            // checkBoxEnkriptiraj
+            // 
+            this.checkBoxEnkriptiraj.AutoSize = true;
+            this.checkBoxEnkriptiraj.Location = new System.Drawing.Point(47, 217);
+            this.checkBoxEnkriptiraj.Name = "checkBoxEnkriptiraj";
+            this.checkBoxEnkriptiraj.Size = new System.Drawing.Size(149, 21);
+            this.checkBoxEnkriptiraj.TabIndex = 17;
+            this.checkBoxEnkriptiraj.Text = "Enkriptiraj SHA256";
+            this.checkBoxEnkriptiraj.UseVisualStyleBackColor = true;
+            // 
             // IzmjeniPodatak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 383);
+            this.Controls.Add(this.checkBoxEnkriptiraj);
             this.Controls.Add(this.buttonOdustani);
             this.Controls.Add(this.buttonPotvrdi);
             this.Controls.Add(this.label3);
@@ -130,7 +142,7 @@
             this.MaximumSize = new System.Drawing.Size(581, 430);
             this.MinimumSize = new System.Drawing.Size(581, 430);
             this.Name = "IzmjeniPodatak";
-            this.Text = "IzmjeniPodatak";
+            this.Text = "Izmjeni podatak";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +158,6 @@
         private System.Windows.Forms.TextBox txtRedniBroj;
         private System.Windows.Forms.Button buttonOdustani;
         private System.Windows.Forms.Button buttonPotvrdi;
+        private System.Windows.Forms.CheckBox checkBoxEnkriptiraj;
     }
 }

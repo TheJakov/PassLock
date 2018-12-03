@@ -100,6 +100,7 @@
     <Compile Include="Forme\UnosLozinkeOdabraneBaze.Designer.cs">
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klase\Enkripcija.cs" />
     <Compile Include="Klase\Konekcija.cs" />
     <Compile Include="Klase\Podatak.cs" />
     <Compile Include="Program.cs" />

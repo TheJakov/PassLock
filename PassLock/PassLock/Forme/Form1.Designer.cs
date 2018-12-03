@@ -33,7 +33,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Gumbić = new PassLock.Klase.FlatButton();
             this.buttonOtvoriBazu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,15 +72,6 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // Gumbić
-            // 
-            this.Gumbić.BorderThickness = 2F;
-            this.Gumbić.Location = new System.Drawing.Point(111, 222);
-            this.Gumbić.Name = "Gumbić";
-            this.Gumbić.Size = new System.Drawing.Size(103, 30);
-            this.Gumbić.TabIndex = 8;
-            this.Gumbić.Text = "Gumbić";
-            // 
             // buttonOtvoriBazu
             // 
             this.buttonOtvoriBazu.Location = new System.Drawing.Point(111, 120);
@@ -98,7 +88,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(321, 275);
-            this.Controls.Add(this.Gumbić);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonNovaBaza);
             this.Controls.Add(this.buttonOtvoriBazu);
@@ -121,7 +110,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Klase.FlatButton Gumbić;
         private System.Windows.Forms.Button buttonOtvoriBazu;
     }
 }

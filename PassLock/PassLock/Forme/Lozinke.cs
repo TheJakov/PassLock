@@ -103,7 +103,26 @@ namespace PassLock
                 MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        
+        private void buttonIzmjeni_Click(object sender, EventArgs e)
+        {
+            Podatak mojPodatak = new Podatak();
+            int rBr;
+            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out rBr))
+            {
+                mojPodatak.RedniBroj = rBr;
+                mojPodatak.Naziv = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
+                mojPodatak.Lozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
+
+                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(lozinka, putanja, mojPodatak);
+                formaIzmjeni.ShowDialog();
+                OsvjeziPodatke(mojaKonekcija.conn); 
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void IzbrisiPodatak()
         {
             mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
@@ -126,5 +145,7 @@ namespace PassLock
 
             mojaKonekcija.ZatvoriKonekciju();
         }
+
+       
     }
 }

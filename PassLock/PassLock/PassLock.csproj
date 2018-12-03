@@ -70,6 +70,12 @@
     <Compile Include="Forme\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\IzmjeniPodatak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmjeniPodatak.Designer.cs">
+      <DependentUpon>IzmjeniPodatak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Lozinke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,10 +101,14 @@
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
     </Compile>
     <Compile Include="Klase\Konekcija.cs" />
+    <Compile Include="Klase\Podatak.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmjeniPodatak.resx">
+      <DependentUpon>IzmjeniPodatak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Lozinke.resx">
       <DependentUpon>Lozinke.cs</DependentUpon>

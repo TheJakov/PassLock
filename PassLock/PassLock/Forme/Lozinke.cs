@@ -85,5 +85,49 @@ namespace PassLock
         {
             Clipboard.SetText(odabranaLozinka);
         }
+
+        private void buttonIzbrisi_Click(object sender, EventArgs e)
+        {
+            string nazivLozinke;
+            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out idPodatak))
+            {
+                nazivLozinke = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
+                if (MessageBox.Show("Želite li stvarno obrisati lozinku sa sifrom: " + idPodatak + " i nazivom "+nazivLozinke+" ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //izbrisi lozinku
+                    IzbrisiPodatak();
+                    //izbrisi kraj
+
+                    OsvjeziPodatke(mojaKonekcija.conn);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        
+        private void IzbrisiPodatak()
+        {
+            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            try
+            {
+                //pokusaj pristupa podacima
+                string sql1 = "SELECT * FROM podaci";
+                SQLiteCommand command1 = new SQLiteCommand(sql1, mojaKonekcija.conn);
+                command1.ExecuteNonQuery();
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Greška kod pristupa podacima!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //enkripcija
+
+            string sqlDelete = "DELETE FROM podaci WHERE id = " + idPodatak + ";";
+            SQLiteCommand command = new SQLiteCommand(sqlDelete, mojaKonekcija.conn);
+            command.ExecuteNonQuery();
+
+            mojaKonekcija.ZatvoriKonekciju();
+        }
     }
 }

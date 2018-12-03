@@ -32,6 +32,7 @@
             this.buttonOdjava = new System.Windows.Forms.Button();
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonKopirajLozinku = new System.Windows.Forms.Button();
+            this.buttonIzbrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,11 +84,23 @@
             this.buttonKopirajLozinku.UseVisualStyleBackColor = false;
             this.buttonKopirajLozinku.Click += new System.EventHandler(this.buttonKopirajLozinku_Click);
             // 
+            // buttonIzbrisi
+            // 
+            this.buttonIzbrisi.BackColor = System.Drawing.Color.Tomato;
+            this.buttonIzbrisi.Location = new System.Drawing.Point(23, 218);
+            this.buttonIzbrisi.Name = "buttonIzbrisi";
+            this.buttonIzbrisi.Size = new System.Drawing.Size(156, 49);
+            this.buttonIzbrisi.TabIndex = 14;
+            this.buttonIzbrisi.Text = "IZBRIŠI";
+            this.buttonIzbrisi.UseVisualStyleBackColor = false;
+            this.buttonIzbrisi.Click += new System.EventHandler(this.buttonIzbrisi_Click);
+            // 
             // Lozinke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 565);
+            this.Controls.Add(this.buttonIzbrisi);
             this.Controls.Add(this.buttonKopirajLozinku);
             this.Controls.Add(this.buttonDodaj);
             this.Controls.Add(this.buttonOdjava);
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Button buttonOdjava;
         private System.Windows.Forms.Button buttonDodaj;
         private System.Windows.Forms.Button buttonKopirajLozinku;
+        private System.Windows.Forms.Button buttonIzbrisi;
     }
 }

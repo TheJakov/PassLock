@@ -18,8 +18,7 @@ namespace PassLock.Forme
         {
             InitializeComponent();
         }
-
-        private void buttonPotvrdi_Click(object sender, EventArgs e)
+        private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
             if (txtLozinka1.Text == txtLozinka2.Text)
             {
@@ -44,7 +43,7 @@ namespace PassLock.Forme
                     command.ExecuteNonQuery();
                     konekcija.Close();
 
-                    Lozinke formaLozinke = new Lozinke(txtLozinka1.Text,putanja);
+                    Lozinke formaLozinke = new Lozinke(txtLozinka1.Text, putanja);
                     this.Hide();
                     formaLozinke.ShowDialog();
                     this.Close();
@@ -57,8 +56,7 @@ namespace PassLock.Forme
                 txtLozinka2.Clear();
             }
         }
-
-        private void buttonOdustani_Click(object sender, EventArgs e)
+        private void flatButtonOdustani_Click(object sender, EventArgs e)
         {
             Form1 pocetnaForma = new Form1();
             this.Hide();

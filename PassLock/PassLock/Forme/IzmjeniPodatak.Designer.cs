@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IzmjeniPodatak));
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtRedniBroj = new System.Windows.Forms.TextBox();
-            this.buttonOdustani = new System.Windows.Forms.Button();
-            this.buttonPotvrdi = new System.Windows.Forms.Button();
             this.checkBoxEnkriptiraj = new System.Windows.Forms.CheckBox();
+            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
             this.SuspendLayout();
             // 
             // label2
@@ -92,28 +93,6 @@
             this.txtRedniBroj.Size = new System.Drawing.Size(317, 22);
             this.txtRedniBroj.TabIndex = 13;
             // 
-            // buttonOdustani
-            // 
-            this.buttonOdustani.BackColor = System.Drawing.Color.Coral;
-            this.buttonOdustani.Location = new System.Drawing.Point(124, 265);
-            this.buttonOdustani.Name = "buttonOdustani";
-            this.buttonOdustani.Size = new System.Drawing.Size(126, 39);
-            this.buttonOdustani.TabIndex = 16;
-            this.buttonOdustani.Text = "ODUSTANI";
-            this.buttonOdustani.UseVisualStyleBackColor = false;
-            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
-            // 
-            // buttonPotvrdi
-            // 
-            this.buttonPotvrdi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(315, 265);
-            this.buttonPotvrdi.Name = "buttonPotvrdi";
-            this.buttonPotvrdi.Size = new System.Drawing.Size(126, 39);
-            this.buttonPotvrdi.TabIndex = 15;
-            this.buttonPotvrdi.Text = "POTVRDI";
-            this.buttonPotvrdi.UseVisualStyleBackColor = false;
-            this.buttonPotvrdi.Click += new System.EventHandler(this.buttonPotvrdi_Click);
-            // 
             // checkBoxEnkriptiraj
             // 
             this.checkBoxEnkriptiraj.AutoSize = true;
@@ -124,21 +103,42 @@
             this.checkBoxEnkriptiraj.Text = "Enkriptiraj SHA256";
             this.checkBoxEnkriptiraj.UseVisualStyleBackColor = true;
             // 
+            // flatButtonPotvrdi
+            // 
+            this.flatButtonPotvrdi.BorderThickness = 2F;
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(316, 265);
+            this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
+            this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonPotvrdi.TabIndex = 18;
+            this.flatButtonPotvrdi.Text = "POTVRDI";
+            this.flatButtonPotvrdi.Click += new System.EventHandler(this.flatButtonPotvrdi_Click);
+            // 
+            // flatButtonOdustani
+            // 
+            this.flatButtonOdustani.BorderThickness = 2F;
+            this.flatButtonOdustani.Location = new System.Drawing.Point(128, 265);
+            this.flatButtonOdustani.Name = "flatButtonOdustani";
+            this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonOdustani.TabIndex = 19;
+            this.flatButtonOdustani.Text = "ODUSTANI";
+            this.flatButtonOdustani.Click += new System.EventHandler(this.flatButtonOdustani_Click);
+            // 
             // IzmjeniPodatak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(563, 383);
+            this.Controls.Add(this.flatButtonOdustani);
+            this.Controls.Add(this.flatButtonPotvrdi);
             this.Controls.Add(this.checkBoxEnkriptiraj);
-            this.Controls.Add(this.buttonOdustani);
-            this.Controls.Add(this.buttonPotvrdi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtRedniBroj);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLozinka);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNaziv);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(581, 430);
             this.MinimumSize = new System.Drawing.Size(581, 430);
@@ -157,8 +157,8 @@
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRedniBroj;
-        private System.Windows.Forms.Button buttonOdustani;
-        private System.Windows.Forms.Button buttonPotvrdi;
         private System.Windows.Forms.CheckBox checkBoxEnkriptiraj;
+        private Klase.FlatButtonYes flatButtonPotvrdi;
+        private Klase.FlatButtonNo flatButtonOdustani;
     }
 }

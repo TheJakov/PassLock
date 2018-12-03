@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NovaBaza));
             this.txtLozinka1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka2 = new System.Windows.Forms.TextBox();
-            this.buttonPotvrdi = new System.Windows.Forms.Button();
-            this.buttonOdustani = new System.Windows.Forms.Button();
+            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
             this.SuspendLayout();
             // 
             // txtLozinka1
@@ -73,27 +74,25 @@
             this.txtLozinka2.TabIndex = 2;
             this.txtLozinka2.UseSystemPasswordChar = true;
             // 
-            // buttonPotvrdi
+            // flatButtonPotvrdi
             // 
-            this.buttonPotvrdi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(258, 210);
-            this.buttonPotvrdi.Name = "buttonPotvrdi";
-            this.buttonPotvrdi.Size = new System.Drawing.Size(126, 39);
-            this.buttonPotvrdi.TabIndex = 4;
-            this.buttonPotvrdi.Text = "POTVRDI";
-            this.buttonPotvrdi.UseVisualStyleBackColor = false;
-            this.buttonPotvrdi.Click += new System.EventHandler(this.buttonPotvrdi_Click);
+            this.flatButtonPotvrdi.BorderThickness = 2F;
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(258, 210);
+            this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
+            this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonPotvrdi.TabIndex = 12;
+            this.flatButtonPotvrdi.Text = "POTVRDI";
+            this.flatButtonPotvrdi.Click += new System.EventHandler(this.flatButtonPotvrdi_Click);
             // 
-            // buttonOdustani
+            // flatButtonOdustani
             // 
-            this.buttonOdustani.BackColor = System.Drawing.Color.Coral;
-            this.buttonOdustani.Location = new System.Drawing.Point(67, 210);
-            this.buttonOdustani.Name = "buttonOdustani";
-            this.buttonOdustani.Size = new System.Drawing.Size(126, 39);
-            this.buttonOdustani.TabIndex = 11;
-            this.buttonOdustani.Text = "ODUSTANI";
-            this.buttonOdustani.UseVisualStyleBackColor = false;
-            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
+            this.flatButtonOdustani.BorderThickness = 2F;
+            this.flatButtonOdustani.Location = new System.Drawing.Point(67, 210);
+            this.flatButtonOdustani.Name = "flatButtonOdustani";
+            this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonOdustani.TabIndex = 13;
+            this.flatButtonOdustani.Text = "ODUSTANI";
+            this.flatButtonOdustani.Click += new System.EventHandler(this.flatButtonOdustani_Click);
             // 
             // NovaBaza
             // 
@@ -101,18 +100,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(458, 277);
-            this.Controls.Add(this.buttonOdustani);
-            this.Controls.Add(this.buttonPotvrdi);
+            this.Controls.Add(this.flatButtonOdustani);
+            this.Controls.Add(this.flatButtonPotvrdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLozinka2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLozinka1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(476, 324);
             this.MinimumSize = new System.Drawing.Size(476, 324);
             this.Name = "NovaBaza";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NovaBaza";
+            this.Text = "Izradi novu bazu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +124,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLozinka2;
-        private System.Windows.Forms.Button buttonPotvrdi;
-        private System.Windows.Forms.Button buttonOdustani;
+        private Klase.FlatButtonYes flatButtonPotvrdi;
+        private Klase.FlatButtonNo flatButtonOdustani;
     }
 }

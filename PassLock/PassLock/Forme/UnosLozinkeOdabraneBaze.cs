@@ -22,41 +22,39 @@ namespace PassLock.Forme
             InitializeComponent();
             this.putanja = putanja;
         }
-
-        private void buttonPotvrdi_Click(object sender, EventArgs e)
+        private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
             string lozinka = txtLozinka.Text;
-            if(lozinka.Length!=0)
+            if (lozinka.Length != 0)
             {
                 mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
-
                 try
                 {
                     //pokusaj pristupa podacima
                     string sql = "SELECT * FROM podaci";
                     SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);
-                    command.ExecuteNonQuery();                    
+                    command.ExecuteNonQuery();
                     mojaKonekcija.conn.Close();
 
-                    Lozinke novaForma = new Lozinke(lozinka,putanja);
+                    Lozinke novaForma = new Lozinke(lozinka, putanja);
                     this.Hide();
                     novaForma.ShowDialog();
                     this.Close();
                 }
-                catch(SQLiteException ex)
+                catch (SQLiteException ex)
                 {
                     MessageBox.Show("Krivu lozinku ste upisali!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtLozinka.Clear();
-                }                
+                }
             }
             else
             {
-                MessageBox.Show("Morate lozinku upisati!","Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Morate lozinku upisati!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLozinka.Clear();
             }
         }
 
-        private void buttonOdustani_Click(object sender, EventArgs e)
+        private void flatButtonOdustani_Click(object sender, EventArgs e)
         {
             Form1 pocetnaForma = new Form1();
             this.Hide();

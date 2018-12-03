@@ -40,25 +40,6 @@ namespace PassLock
             OsvjeziPodatke(mojaKonekcija.conn);
             mojaKonekcija.ZatvoriKonekciju();
         }
-
-        private void buttonOdjava_Click(object sender, EventArgs e)
-        {
-            Form1 pocetnaForma = new Form1();
-            this.Hide();
-            pocetnaForma.ShowDialog();
-            this.Close();
-        }
-
-        private void buttonDodaj_Click(object sender, EventArgs e)
-        {
-            NoviPodatak noviPodatak = new NoviPodatak(lozinka, putanja);
-            noviPodatak.ShowDialog();
-
-            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
-            OsvjeziPodatke(mojaKonekcija.conn);
-            mojaKonekcija.ZatvoriKonekciju();
-        }
-
         private void OsvjeziPodatke(SQLiteConnection conn)
         {
             SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM podaci", conn);
@@ -80,49 +61,6 @@ namespace PassLock
             idPodatak = int.Parse(dgvPodaci.CurrentRow.Cells[0].Value.ToString());
 
         }
-
-        private void buttonKopirajLozinku_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(odabranaLozinka);
-        }
-
-        private void buttonIzbrisi_Click(object sender, EventArgs e)
-        {
-            string nazivLozinke;
-            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out idPodatak))
-            {
-                nazivLozinke = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
-                if (MessageBox.Show("Želite li stvarno obrisati lozinku sa sifrom: " + idPodatak + " i nazivom "+nazivLozinke+" ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    IzbrisiPodatak();
-                    OsvjeziPodatke(mojaKonekcija.conn);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        private void buttonIzmjeni_Click(object sender, EventArgs e)
-        {
-            Podatak mojPodatak = new Podatak();
-            int rBr;
-            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out rBr))
-            {
-                mojPodatak.RedniBroj = rBr;
-                mojPodatak.Naziv = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
-                mojPodatak.Lozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
-
-                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(lozinka, putanja, mojPodatak);
-                formaIzmjeni.ShowDialog();
-                OsvjeziPodatke(mojaKonekcija.conn); 
-            }
-            else
-            {
-                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void IzbrisiPodatak()
         {
             mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
@@ -146,6 +84,62 @@ namespace PassLock
             mojaKonekcija.ZatvoriKonekciju();
         }
 
-       
+        private void flatButtonOdjaviSe_Click(object sender, EventArgs e)
+        {
+            Form1 pocetnaForma = new Form1();
+            this.Hide();
+            pocetnaForma.ShowDialog();
+            this.Close();
+        }
+
+        private void flatButtonNoIzbrisi_Click(object sender, EventArgs e)
+        {
+            string nazivLozinke;
+            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out idPodatak))
+            {
+                nazivLozinke = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
+                if (MessageBox.Show("Želite li stvarno obrisati lozinku sa sifrom: " + idPodatak + " i nazivom " + nazivLozinke + " ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    IzbrisiPodatak();
+                    OsvjeziPodatke(mojaKonekcija.conn);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void flatButtonIzmjeni_Click(object sender, EventArgs e)
+        {
+            Podatak mojPodatak = new Podatak();
+            int rBr;
+            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out rBr))
+            {
+                mojPodatak.RedniBroj = rBr;
+                mojPodatak.Naziv = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
+                mojPodatak.Lozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
+
+                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(lozinka, putanja, mojPodatak);
+                formaIzmjeni.ShowDialog();
+                OsvjeziPodatke(mojaKonekcija.conn);
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void flatButtonDodaj_Click(object sender, EventArgs e)
+        {
+            NoviPodatak noviPodatak = new NoviPodatak(lozinka, putanja);
+            noviPodatak.ShowDialog();
+
+            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            OsvjeziPodatke(mojaKonekcija.conn);
+            mojaKonekcija.ZatvoriKonekciju();
+        }
+        private void flatButtonClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(odabranaLozinka);
+        }
     }
 }

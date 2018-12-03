@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonPotvrdi = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnosLozinkeOdabraneBaze));
             this.label1 = new System.Windows.Forms.Label();
             this.txtLozinka = new System.Windows.Forms.TextBox();
-            this.buttonOdustani = new System.Windows.Forms.Button();
+            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
             this.SuspendLayout();
-            // 
-            // buttonPotvrdi
-            // 
-            this.buttonPotvrdi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(102, 166);
-            this.buttonPotvrdi.Name = "buttonPotvrdi";
-            this.buttonPotvrdi.Size = new System.Drawing.Size(126, 39);
-            this.buttonPotvrdi.TabIndex = 9;
-            this.buttonPotvrdi.Text = "POTVRDI";
-            this.buttonPotvrdi.UseVisualStyleBackColor = false;
-            this.buttonPotvrdi.Click += new System.EventHandler(this.buttonPotvrdi_Click);
             // 
             // label1
             // 
@@ -63,16 +53,25 @@
             this.txtLozinka.TabIndex = 5;
             this.txtLozinka.UseSystemPasswordChar = true;
             // 
-            // buttonOdustani
+            // flatButtonOdustani
             // 
-            this.buttonOdustani.BackColor = System.Drawing.Color.Coral;
-            this.buttonOdustani.Location = new System.Drawing.Point(293, 166);
-            this.buttonOdustani.Name = "buttonOdustani";
-            this.buttonOdustani.Size = new System.Drawing.Size(126, 39);
-            this.buttonOdustani.TabIndex = 10;
-            this.buttonOdustani.Text = "ODUSTANI";
-            this.buttonOdustani.UseVisualStyleBackColor = false;
-            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
+            this.flatButtonOdustani.BorderThickness = 2F;
+            this.flatButtonOdustani.Location = new System.Drawing.Point(293, 166);
+            this.flatButtonOdustani.Name = "flatButtonOdustani";
+            this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonOdustani.TabIndex = 14;
+            this.flatButtonOdustani.Text = "ODUSTANI";
+            this.flatButtonOdustani.Click += new System.EventHandler(this.flatButtonOdustani_Click);
+            // 
+            // flatButtonPotvrdi
+            // 
+            this.flatButtonPotvrdi.BorderThickness = 2F;
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(102, 166);
+            this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
+            this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonPotvrdi.TabIndex = 15;
+            this.flatButtonPotvrdi.Text = "POTVRDI";
+            this.flatButtonPotvrdi.Click += new System.EventHandler(this.flatButtonPotvrdi_Click);
             // 
             // UnosLozinkeOdabraneBaze
             // 
@@ -80,10 +79,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(515, 330);
-            this.Controls.Add(this.buttonOdustani);
-            this.Controls.Add(this.buttonPotvrdi);
+            this.Controls.Add(this.flatButtonPotvrdi);
+            this.Controls.Add(this.flatButtonOdustani);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLozinka);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(533, 377);
             this.MinimumSize = new System.Drawing.Size(533, 377);
@@ -96,10 +96,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonPotvrdi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLozinka;
-        private System.Windows.Forms.Button buttonOdustani;
+        private Klase.FlatButtonNo flatButtonOdustani;
+        private Klase.FlatButtonYes flatButtonPotvrdi;
     }
 }

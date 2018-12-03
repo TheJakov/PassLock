@@ -32,13 +32,13 @@ namespace PassLock.Forme
             this.lozinka = lozinka;
             this.putanja = putanja;
         }
-
-        private void buttonOdustani_Click(object sender, EventArgs e)
+        private void trackBarDuljinaLozinke_ValueChanged(object sender, EventArgs e)
         {
-            Close();
+            labelDuljinaZnakova.Text = trackBarDuljinaLozinke.Value.ToString();
+            duljinaLozinke = trackBarDuljinaLozinke.Value;
         }
 
-        private void buttonPotvrdi_Click(object sender, EventArgs e)
+        private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
             mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
             try
@@ -56,17 +56,17 @@ namespace PassLock.Forme
             }
 
             string kriptiranaLozinka = enkriptor.Enkriptiraj(txtLozinka.Text, duljinaLozinke);
-            string sql = "INSERT INTO podaci(naziv,lozinka) values('"+txtNaziv.Text+"','"+kriptiranaLozinka+"')";
+            string sql = "INSERT INTO podaci(naziv,lozinka) values('" + txtNaziv.Text + "','" + kriptiranaLozinka + "')";
             SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);
             command.ExecuteNonQuery();
 
             mojaKonekcija.ZatvoriKonekciju();
             this.Close();
         }
-        private void trackBarDuljinaLozinke_ValueChanged(object sender, EventArgs e)
+
+        private void flatButtonOdustani_Click(object sender, EventArgs e)
         {
-            labelDuljinaZnakova.Text = trackBarDuljinaLozinke.Value.ToString();
-            duljinaLozinke = trackBarDuljinaLozinke.Value;
+            Close();
         }
     }
 }

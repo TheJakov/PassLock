@@ -104,6 +104,12 @@
     <Compile Include="Klase\FlatButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Klase\FlatButtonNo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Klase\FlatButtonYes.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Klase\Konekcija.cs" />
     <Compile Include="Klase\Podatak.cs" />
     <Compile Include="Program.cs" />

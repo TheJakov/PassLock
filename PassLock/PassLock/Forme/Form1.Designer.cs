@@ -29,24 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.buttonNovaBaza = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonOtvoriBazu = new System.Windows.Forms.Button();
+            this.flatButtonOtvoriBazu = new PassLock.Klase.FlatButton();
+            this.flatButtonNovaBaza = new PassLock.Klase.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonNovaBaza
-            // 
-            this.buttonNovaBaza.Location = new System.Drawing.Point(111, 175);
-            this.buttonNovaBaza.Name = "buttonNovaBaza";
-            this.buttonNovaBaza.Size = new System.Drawing.Size(103, 28);
-            this.buttonNovaBaza.TabIndex = 4;
-            this.buttonNovaBaza.Text = "Nova baza";
-            this.buttonNovaBaza.UseVisualStyleBackColor = true;
-            this.buttonNovaBaza.Click += new System.EventHandler(this.buttonNovaBaza_Click);
             // 
             // openFileDialog1
             // 
@@ -72,15 +62,25 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonOtvoriBazu
+            // flatButtonOtvoriBazu
             // 
-            this.buttonOtvoriBazu.Location = new System.Drawing.Point(111, 120);
-            this.buttonOtvoriBazu.Name = "buttonOtvoriBazu";
-            this.buttonOtvoriBazu.Size = new System.Drawing.Size(103, 28);
-            this.buttonOtvoriBazu.TabIndex = 3;
-            this.buttonOtvoriBazu.Text = "Otvori bazu";
-            this.buttonOtvoriBazu.UseVisualStyleBackColor = true;
-            this.buttonOtvoriBazu.Click += new System.EventHandler(this.buttonOtvoriBazu_Click);
+            this.flatButtonOtvoriBazu.BorderThickness = 2F;
+            this.flatButtonOtvoriBazu.Location = new System.Drawing.Point(102, 108);
+            this.flatButtonOtvoriBazu.Name = "flatButtonOtvoriBazu";
+            this.flatButtonOtvoriBazu.Size = new System.Drawing.Size(129, 44);
+            this.flatButtonOtvoriBazu.TabIndex = 8;
+            this.flatButtonOtvoriBazu.Text = "Otvori bazu";
+            this.flatButtonOtvoriBazu.Click += new System.EventHandler(this.flatButtonOtvoriBazu_Click);
+            // 
+            // flatButtonNovaBaza
+            // 
+            this.flatButtonNovaBaza.BorderThickness = 2F;
+            this.flatButtonNovaBaza.Location = new System.Drawing.Point(102, 177);
+            this.flatButtonNovaBaza.Name = "flatButtonNovaBaza";
+            this.flatButtonNovaBaza.Size = new System.Drawing.Size(129, 44);
+            this.flatButtonNovaBaza.TabIndex = 9;
+            this.flatButtonNovaBaza.Text = "Nova baza";
+            this.flatButtonNovaBaza.Click += new System.EventHandler(this.flatButtonNovaBaza_Click);
             // 
             // Form1
             // 
@@ -88,9 +88,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(321, 275);
+            this.Controls.Add(this.flatButtonNovaBaza);
+            this.Controls.Add(this.flatButtonOtvoriBazu);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.buttonNovaBaza);
-            this.Controls.Add(this.buttonOtvoriBazu);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -106,11 +106,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonNovaBaza;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonOtvoriBazu;
+        private Klase.FlatButton flatButtonOtvoriBazu;
+        private Klase.FlatButton flatButtonNovaBaza;
     }
 }
 

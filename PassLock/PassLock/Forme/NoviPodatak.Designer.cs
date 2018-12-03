@@ -28,28 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonPotvrdi = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoviPodatak));
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
-            this.buttonOdustani = new System.Windows.Forms.Button();
             this.trackBarDuljinaLozinke = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.labelDuljinaZnakova = new System.Windows.Forms.Label();
+            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDuljinaLozinke)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonPotvrdi
-            // 
-            this.buttonPotvrdi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(292, 314);
-            this.buttonPotvrdi.Name = "buttonPotvrdi";
-            this.buttonPotvrdi.Size = new System.Drawing.Size(126, 39);
-            this.buttonPotvrdi.TabIndex = 9;
-            this.buttonPotvrdi.Text = "POTVRDI";
-            this.buttonPotvrdi.UseVisualStyleBackColor = false;
-            this.buttonPotvrdi.Click += new System.EventHandler(this.buttonPotvrdi_Click);
             // 
             // label2
             // 
@@ -87,17 +77,6 @@
             this.txtNaziv.Size = new System.Drawing.Size(317, 22);
             this.txtNaziv.TabIndex = 5;
             // 
-            // buttonOdustani
-            // 
-            this.buttonOdustani.BackColor = System.Drawing.Color.Coral;
-            this.buttonOdustani.Location = new System.Drawing.Point(101, 314);
-            this.buttonOdustani.Name = "buttonOdustani";
-            this.buttonOdustani.Size = new System.Drawing.Size(126, 39);
-            this.buttonOdustani.TabIndex = 11;
-            this.buttonOdustani.Text = "ODUSTANI";
-            this.buttonOdustani.UseVisualStyleBackColor = false;
-            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
-            // 
             // trackBarDuljinaLozinke
             // 
             this.trackBarDuljinaLozinke.Location = new System.Drawing.Point(101, 234);
@@ -131,27 +110,48 @@
             this.labelDuljinaZnakova.TabIndex = 14;
             this.labelDuljinaZnakova.Text = "64";
             // 
+            // flatButtonOdustani
+            // 
+            this.flatButtonOdustani.BorderThickness = 2F;
+            this.flatButtonOdustani.Location = new System.Drawing.Point(101, 314);
+            this.flatButtonOdustani.Name = "flatButtonOdustani";
+            this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonOdustani.TabIndex = 15;
+            this.flatButtonOdustani.Text = "ODUSTANI";
+            this.flatButtonOdustani.Click += new System.EventHandler(this.flatButtonOdustani_Click);
+            // 
+            // flatButtonPotvrdi
+            // 
+            this.flatButtonPotvrdi.BorderThickness = 2F;
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(292, 314);
+            this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
+            this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonPotvrdi.TabIndex = 16;
+            this.flatButtonPotvrdi.Text = "POTVRDI";
+            this.flatButtonPotvrdi.Click += new System.EventHandler(this.flatButtonPotvrdi_Click);
+            // 
             // NoviPodatak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(532, 412);
+            this.Controls.Add(this.flatButtonPotvrdi);
+            this.Controls.Add(this.flatButtonOdustani);
             this.Controls.Add(this.labelDuljinaZnakova);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.trackBarDuljinaLozinke);
-            this.Controls.Add(this.buttonOdustani);
-            this.Controls.Add(this.buttonPotvrdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLozinka);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNaziv);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(550, 459);
             this.MinimumSize = new System.Drawing.Size(550, 459);
             this.Name = "NoviPodatak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NoviPodatak";
+            this.Text = "Novi podatak";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDuljinaLozinke)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,15 +159,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonPotvrdi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNaziv;
-        private System.Windows.Forms.Button buttonOdustani;
         private System.Windows.Forms.TrackBar trackBarDuljinaLozinke;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelDuljinaZnakova;
+        private Klase.FlatButtonNo flatButtonOdustani;
+        private Klase.FlatButtonYes flatButtonPotvrdi;
     }
 }

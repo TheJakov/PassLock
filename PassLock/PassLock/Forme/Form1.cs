@@ -22,21 +22,12 @@ namespace PassLock
             InitializeComponent();
             this.Text = "PassLock";
         }
-
-        private void buttonNovaBaza_Click(object sender, EventArgs e)
-        {
-            Forme.NovaBaza novaBaza = new Forme.NovaBaza();
-            this.Hide();
-            novaBaza.ShowDialog();
-            this.Close();
-        }
-        
-        private void buttonOtvoriBazu_Click(object sender, EventArgs e)
+        private void flatButtonOtvoriBazu_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "File|*.db";
             openFileDialog1.Title = "Select file";
-  
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string putanja = Path.GetFullPath(openFileDialog1.FileName).ToString();
@@ -45,8 +36,15 @@ namespace PassLock
                 this.Hide();
                 novaForma.ShowDialog();
                 this.Close();
-                
+
             }
+        }
+        private void flatButtonNovaBaza_Click(object sender, EventArgs e)
+        {
+            NovaBaza novaBaza = new NovaBaza();
+            this.Hide();
+            novaBaza.ShowDialog();
+            this.Close();
         }
     }
 }

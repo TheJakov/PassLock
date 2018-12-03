@@ -35,13 +35,7 @@ namespace PassLock.Forme
             txtNaziv.Text = mojPodatak.Naziv;
             txtLozinka.Text = mojPodatak.Lozinka;
         }
-
-        private void buttonOdustani_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonPotvrdi_Click(object sender, EventArgs e)
+        private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
             if (txtNaziv.Text.Length > 0)
             {
@@ -68,7 +62,7 @@ namespace PassLock.Forme
                     }
                     string sqlUpdate = "UPDATE podaci " +
                          "SET naziv = '" + txtNaziv.Text + "', lozinka = '" + lozinkaUpdate + "' " +
-                         "WHERE id = "+txtRedniBroj.Text+";";
+                         "WHERE id = " + txtRedniBroj.Text + ";";
                     SQLiteCommand command = new SQLiteCommand(sqlUpdate, mojaKonekcija.conn);
                     command.ExecuteNonQuery();
 
@@ -84,6 +78,11 @@ namespace PassLock.Forme
             {
                 MessageBox.Show("Neispravan unos naziva podatka !", "Pažnja!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void flatButtonOdustani_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

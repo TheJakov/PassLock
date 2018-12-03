@@ -107,6 +107,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLozinka1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(476, 324);
+            this.MinimumSize = new System.Drawing.Size(476, 324);
             this.Name = "NovaBaza";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NovaBaza";

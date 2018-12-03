@@ -84,6 +84,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLozinka);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(533, 377);
+            this.MinimumSize = new System.Drawing.Size(533, 377);
             this.Name = "UnosLozinkeOdabraneBaze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Otvori postojeću bazu";

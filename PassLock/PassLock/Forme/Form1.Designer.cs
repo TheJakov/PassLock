@@ -77,6 +77,8 @@
             this.Controls.Add(this.buttonOtvoriBazu);
             this.Controls.Add(this.labelaNaslov);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(339, 318);
+            this.MinimumSize = new System.Drawing.Size(339, 318);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

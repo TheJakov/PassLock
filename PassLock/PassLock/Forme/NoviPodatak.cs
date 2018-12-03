@@ -51,6 +51,7 @@ namespace PassLock.Forme
                 txtNaziv.Clear();
                 txtLozinka.Clear();
             }
+            //enkripcija
 
             string sql = "INSERT INTO podaci(naziv,lozinka) values('"+txtNaziv.Text+"','"+txtLozinka.Text+"')";
             SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);

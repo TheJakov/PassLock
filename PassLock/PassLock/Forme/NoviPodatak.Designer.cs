@@ -106,6 +106,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNaziv);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(475, 388);
+            this.MinimumSize = new System.Drawing.Size(475, 388);
             this.Name = "NoviPodatak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NoviPodatak";

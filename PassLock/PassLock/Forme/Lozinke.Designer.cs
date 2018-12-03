@@ -36,10 +36,15 @@
             // 
             // dgvPodaci
             // 
+            this.dgvPodaci.AllowUserToAddRows = false;
+            this.dgvPodaci.AllowUserToDeleteRows = false;
             this.dgvPodaci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPodaci.Location = new System.Drawing.Point(213, 70);
+            this.dgvPodaci.MultiSelect = false;
             this.dgvPodaci.Name = "dgvPodaci";
+            this.dgvPodaci.ReadOnly = true;
             this.dgvPodaci.RowTemplate.Height = 24;
+            this.dgvPodaci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPodaci.Size = new System.Drawing.Size(809, 470);
             this.dgvPodaci.TabIndex = 0;
             // 
@@ -74,6 +79,8 @@
             this.Controls.Add(this.buttonOdjava);
             this.Controls.Add(this.dgvPodaci);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1052, 612);
+            this.MinimumSize = new System.Drawing.Size(1052, 612);
             this.Name = "Lozinke";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moji podaci";

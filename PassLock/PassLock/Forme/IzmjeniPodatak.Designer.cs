@@ -127,7 +127,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNaziv);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(443, 430);
+            this.MaximumSize = new System.Drawing.Size(581, 430);
+            this.MinimumSize = new System.Drawing.Size(581, 430);
             this.Name = "IzmjeniPodatak";
             this.Text = "IzmjeniPodatak";
             this.ResumeLayout(false);

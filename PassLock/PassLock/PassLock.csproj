@@ -101,6 +101,9 @@
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
     </Compile>
     <Compile Include="Klase\Enkripcija.cs" />
+    <Compile Include="Klase\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Klase\Konekcija.cs" />
     <Compile Include="Klase\Podatak.cs" />
     <Compile Include="Program.cs" />

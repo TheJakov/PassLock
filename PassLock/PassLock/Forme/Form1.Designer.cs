@@ -29,24 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.buttonOtvoriBazu = new System.Windows.Forms.Button();
             this.buttonNovaBaza = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Gumbić = new PassLock.Klase.FlatButton();
+            this.buttonOtvoriBazu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonOtvoriBazu
-            // 
-            this.buttonOtvoriBazu.Location = new System.Drawing.Point(111, 120);
-            this.buttonOtvoriBazu.Name = "buttonOtvoriBazu";
-            this.buttonOtvoriBazu.Size = new System.Drawing.Size(103, 28);
-            this.buttonOtvoriBazu.TabIndex = 3;
-            this.buttonOtvoriBazu.Text = "Otvori bazu";
-            this.buttonOtvoriBazu.UseVisualStyleBackColor = true;
-            this.buttonOtvoriBazu.Click += new System.EventHandler(this.buttonOtvoriBazu_Click);
             // 
             // buttonNovaBaza
             // 
@@ -82,12 +73,32 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // Gumbić
+            // 
+            this.Gumbić.BorderThickness = 2F;
+            this.Gumbić.Location = new System.Drawing.Point(111, 222);
+            this.Gumbić.Name = "Gumbić";
+            this.Gumbić.Size = new System.Drawing.Size(103, 30);
+            this.Gumbić.TabIndex = 8;
+            this.Gumbić.Text = "Gumbić";
+            // 
+            // buttonOtvoriBazu
+            // 
+            this.buttonOtvoriBazu.Location = new System.Drawing.Point(111, 120);
+            this.buttonOtvoriBazu.Name = "buttonOtvoriBazu";
+            this.buttonOtvoriBazu.Size = new System.Drawing.Size(103, 28);
+            this.buttonOtvoriBazu.TabIndex = 3;
+            this.buttonOtvoriBazu.Text = "Otvori bazu";
+            this.buttonOtvoriBazu.UseVisualStyleBackColor = true;
+            this.buttonOtvoriBazu.Click += new System.EventHandler(this.buttonOtvoriBazu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(321, 275);
+            this.Controls.Add(this.Gumbić);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonNovaBaza);
             this.Controls.Add(this.buttonOtvoriBazu);
@@ -106,11 +117,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonOtvoriBazu;
         private System.Windows.Forms.Button buttonNovaBaza;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Klase.FlatButton Gumbić;
+        private System.Windows.Forms.Button buttonOtvoriBazu;
     }
 }
 

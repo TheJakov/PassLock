@@ -109,6 +109,9 @@
             this.Controls.Add(this.flatButtonPotvrdi);
             this.Controls.Add(this.flatButtonOdustani);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(533, 387);
+            this.MinimumSize = new System.Drawing.Size(533, 387);
             this.Name = "PromjenaLozinkeBaze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Promjena lozinke";

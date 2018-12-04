@@ -56,7 +56,8 @@
             // flatButtonOdustani
             // 
             this.flatButtonOdustani.BorderThickness = 2F;
-            this.flatButtonOdustani.Location = new System.Drawing.Point(293, 166);
+            this.flatButtonOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flatButtonOdustani.Location = new System.Drawing.Point(102, 177);
             this.flatButtonOdustani.Name = "flatButtonOdustani";
             this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
             this.flatButtonOdustani.TabIndex = 14;
@@ -66,7 +67,8 @@
             // flatButtonPotvrdi
             // 
             this.flatButtonPotvrdi.BorderThickness = 2F;
-            this.flatButtonPotvrdi.Location = new System.Drawing.Point(102, 166);
+            this.flatButtonPotvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(293, 177);
             this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
             this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
             this.flatButtonPotvrdi.TabIndex = 15;

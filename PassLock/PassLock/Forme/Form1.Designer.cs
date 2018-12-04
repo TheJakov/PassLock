@@ -65,6 +65,7 @@
             // flatButtonOtvoriBazu
             // 
             this.flatButtonOtvoriBazu.BorderThickness = 2F;
+            this.flatButtonOtvoriBazu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.flatButtonOtvoriBazu.Location = new System.Drawing.Point(102, 108);
             this.flatButtonOtvoriBazu.Name = "flatButtonOtvoriBazu";
             this.flatButtonOtvoriBazu.Size = new System.Drawing.Size(129, 44);
@@ -75,6 +76,7 @@
             // flatButtonNovaBaza
             // 
             this.flatButtonNovaBaza.BorderThickness = 2F;
+            this.flatButtonNovaBaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.flatButtonNovaBaza.Location = new System.Drawing.Point(102, 177);
             this.flatButtonNovaBaza.Name = "flatButtonNovaBaza";
             this.flatButtonNovaBaza.Size = new System.Drawing.Size(129, 44);

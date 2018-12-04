@@ -16,7 +16,7 @@ namespace PassLock.Klase
         private StringFormat stringFormat = new StringFormat();
 
         public override Cursor Cursor { get; set; } = Cursors.Hand;
-        public float BorderThickness { get; set; } = 2;
+        public float BorderThickness { get; set; } = 4;
 
         public FlatButton()
         {

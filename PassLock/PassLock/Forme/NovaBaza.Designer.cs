@@ -39,7 +39,7 @@
             // 
             // txtLozinka1
             // 
-            this.txtLozinka1.Location = new System.Drawing.Point(67, 74);
+            this.txtLozinka1.Location = new System.Drawing.Point(96, 83);
             this.txtLozinka1.Name = "txtLozinka1";
             this.txtLozinka1.Size = new System.Drawing.Size(317, 22);
             this.txtLozinka1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 45);
+            this.label1.Location = new System.Drawing.Point(91, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 26);
             this.label1.TabIndex = 1;
@@ -60,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 125);
+            this.label2.Location = new System.Drawing.Point(91, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(252, 26);
             this.label2.TabIndex = 3;
@@ -68,7 +68,7 @@
             // 
             // txtLozinka2
             // 
-            this.txtLozinka2.Location = new System.Drawing.Point(67, 154);
+            this.txtLozinka2.Location = new System.Drawing.Point(96, 163);
             this.txtLozinka2.Name = "txtLozinka2";
             this.txtLozinka2.Size = new System.Drawing.Size(317, 22);
             this.txtLozinka2.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.flatButtonPotvrdi.BorderThickness = 2F;
             this.flatButtonPotvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flatButtonPotvrdi.Location = new System.Drawing.Point(258, 210);
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(287, 234);
             this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
             this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
             this.flatButtonPotvrdi.TabIndex = 12;
@@ -89,7 +89,7 @@
             // 
             this.flatButtonOdustani.BorderThickness = 2F;
             this.flatButtonOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flatButtonOdustani.Location = new System.Drawing.Point(67, 210);
+            this.flatButtonOdustani.Location = new System.Drawing.Point(96, 234);
             this.flatButtonOdustani.Name = "flatButtonOdustani";
             this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
             this.flatButtonOdustani.TabIndex = 13;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(458, 277);
+            this.ClientSize = new System.Drawing.Size(515, 340);
             this.Controls.Add(this.flatButtonOdustani);
             this.Controls.Add(this.flatButtonPotvrdi);
             this.Controls.Add(this.label2);
@@ -110,8 +110,8 @@
             this.Controls.Add(this.txtLozinka1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(476, 324);
-            this.MinimumSize = new System.Drawing.Size(476, 324);
+            this.MaximumSize = new System.Drawing.Size(533, 387);
+            this.MinimumSize = new System.Drawing.Size(533, 387);
             this.Name = "NovaBaza";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izradi novu bazu";

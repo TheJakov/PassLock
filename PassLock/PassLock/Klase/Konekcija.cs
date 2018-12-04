@@ -21,5 +21,10 @@ namespace PassLock.Klase
         {
             conn.Close();
         }
+
+        public void PromjenaLozinke(string novaLozinka)
+        {
+            conn.ChangePassword(novaLozinka);
+        }
     }
 }

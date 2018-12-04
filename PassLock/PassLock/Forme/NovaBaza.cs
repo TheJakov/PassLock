@@ -20,7 +20,7 @@ namespace PassLock.Forme
         }
         private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
-            if (txtLozinka1.Text == txtLozinka2.Text)
+            if (txtLozinka1.Text == txtLozinka2.Text && txtLozinka1.Text.Length>=8)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "File|*.db";
@@ -48,6 +48,10 @@ namespace PassLock.Forme
                     formaLozinke.ShowDialog();
                     this.Close();
                 }
+            }
+            else if(txtLozinka1.Text == txtLozinka2.Text && txtLozinka1.Text.Length < 8)
+            {
+                MessageBox.Show("Lozinka vam je slaba ! \n \n Treba sadržavati minimalno 8 znakova !", "Pozor");
             }
             else
             {

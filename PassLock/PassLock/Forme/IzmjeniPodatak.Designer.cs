@@ -145,6 +145,7 @@
             this.MaximumSize = new System.Drawing.Size(581, 430);
             this.MinimumSize = new System.Drawing.Size(581, 430);
             this.Name = "IzmjeniPodatak";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izmjeni podatak";
             this.ResumeLayout(false);
             this.PerformLayout();

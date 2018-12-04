@@ -57,7 +57,7 @@
             // 
             this.flatButtonOdustani.BorderThickness = 2F;
             this.flatButtonOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flatButtonOdustani.Location = new System.Drawing.Point(102, 177);
+            this.flatButtonOdustani.Location = new System.Drawing.Point(102, 203);
             this.flatButtonOdustani.Name = "flatButtonOdustani";
             this.flatButtonOdustani.Size = new System.Drawing.Size(126, 39);
             this.flatButtonOdustani.TabIndex = 14;
@@ -68,7 +68,7 @@
             // 
             this.flatButtonPotvrdi.BorderThickness = 2F;
             this.flatButtonPotvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flatButtonPotvrdi.Location = new System.Drawing.Point(293, 177);
+            this.flatButtonPotvrdi.Location = new System.Drawing.Point(293, 203);
             this.flatButtonPotvrdi.Name = "flatButtonPotvrdi";
             this.flatButtonPotvrdi.Size = new System.Drawing.Size(126, 39);
             this.flatButtonPotvrdi.TabIndex = 15;
@@ -80,15 +80,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(515, 330);
+            this.ClientSize = new System.Drawing.Size(515, 340);
             this.Controls.Add(this.flatButtonPotvrdi);
             this.Controls.Add(this.flatButtonOdustani);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLozinka);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(533, 377);
-            this.MinimumSize = new System.Drawing.Size(533, 377);
+            this.MaximumSize = new System.Drawing.Size(533, 387);
+            this.MinimumSize = new System.Drawing.Size(533, 387);
             this.Name = "UnosLozinkeOdabraneBaze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Otvori postojeću bazu";

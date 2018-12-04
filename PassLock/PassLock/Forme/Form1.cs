@@ -20,7 +20,6 @@ namespace PassLock
         public Form1()
         {
             InitializeComponent();
-            this.Text = "PassLock";
         }
         private void flatButtonOtvoriBazu_Click(object sender, EventArgs e)
         {

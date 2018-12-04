@@ -94,6 +94,12 @@
     <Compile Include="Forme\NoviPodatak.Designer.cs">
       <DependentUpon>NoviPodatak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\PromjenaLozinkeBaze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PromjenaLozinkeBaze.Designer.cs">
+      <DependentUpon>PromjenaLozinkeBaze.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\UnosLozinkeOdabraneBaze.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\NoviPodatak.resx">
       <DependentUpon>NoviPodatak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PromjenaLozinkeBaze.resx">
+      <DependentUpon>PromjenaLozinkeBaze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\UnosLozinkeOdabraneBaze.resx">
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>

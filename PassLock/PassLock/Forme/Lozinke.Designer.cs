@@ -36,6 +36,7 @@
             this.flatButtonNoIzbrisi = new PassLock.Klase.FlatButtonNo();
             this.flatButtonOdjaviSe = new PassLock.Klase.FlatButtonNo();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flatButtonPromjenaLozinke = new PassLock.Klase.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -121,12 +122,24 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // flatButtonPromjenaLozinke
+            // 
+            this.flatButtonPromjenaLozinke.BorderThickness = 2F;
+            this.flatButtonPromjenaLozinke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flatButtonPromjenaLozinke.Location = new System.Drawing.Point(764, 25);
+            this.flatButtonPromjenaLozinke.Name = "flatButtonPromjenaLozinke";
+            this.flatButtonPromjenaLozinke.Size = new System.Drawing.Size(126, 39);
+            this.flatButtonPromjenaLozinke.TabIndex = 22;
+            this.flatButtonPromjenaLozinke.Text = "PROMIJENI LOZINKU";
+            this.flatButtonPromjenaLozinke.Click += new System.EventHandler(this.flatButtonPromjenaLozinke_Click);
+            // 
             // Lozinke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1034, 565);
+            this.Controls.Add(this.flatButtonPromjenaLozinke);
             this.Controls.Add(this.flatButtonClipboard);
             this.Controls.Add(this.flatButtonDodaj);
             this.Controls.Add(this.flatButtonIzmjeni);
@@ -157,5 +170,6 @@
         private Klase.FlatButtonYes flatButtonDodaj;
         private Klase.FlatButton flatButtonClipboard;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Klase.FlatButton flatButtonPromjenaLozinke;
     }
 }

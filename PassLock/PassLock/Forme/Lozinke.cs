@@ -141,5 +141,11 @@ namespace PassLock
         {
             Clipboard.SetText(odabranaLozinka);
         }
+
+        private void flatButtonPromjenaLozinke_Click(object sender, EventArgs e)
+        {
+            PromjenaLozinkeBaze promjenaLozinkeBaze = new PromjenaLozinkeBaze(putanja,lozinka);
+            promjenaLozinkeBaze.Show();
+        }
     }
 }

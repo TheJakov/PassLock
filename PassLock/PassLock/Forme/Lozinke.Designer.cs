@@ -37,6 +37,7 @@
             this.flatButtonOdjaviSe = new PassLock.Klase.FlatButtonNo();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flatButtonPromjenaLozinke = new PassLock.Klase.FlatButton();
+            this.checkBoxSakriLozinke = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -133,12 +134,26 @@
             this.flatButtonPromjenaLozinke.Text = "PROMIJENI LOZINKU";
             this.flatButtonPromjenaLozinke.Click += new System.EventHandler(this.flatButtonPromjenaLozinke_Click);
             // 
+            // checkBoxSakriLozinke
+            // 
+            this.checkBoxSakriLozinke.AutoSize = true;
+            this.checkBoxSakriLozinke.Checked = true;
+            this.checkBoxSakriLozinke.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSakriLozinke.Location = new System.Drawing.Point(213, 43);
+            this.checkBoxSakriLozinke.Name = "checkBoxSakriLozinke";
+            this.checkBoxSakriLozinke.Size = new System.Drawing.Size(110, 21);
+            this.checkBoxSakriLozinke.TabIndex = 23;
+            this.checkBoxSakriLozinke.Text = "Sakri lozinke";
+            this.checkBoxSakriLozinke.UseVisualStyleBackColor = true;
+            this.checkBoxSakriLozinke.CheckedChanged += new System.EventHandler(this.checkBoxSakriLozinke_CheckedChanged);
+            // 
             // Lozinke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1034, 565);
+            this.Controls.Add(this.checkBoxSakriLozinke);
             this.Controls.Add(this.flatButtonPromjenaLozinke);
             this.Controls.Add(this.flatButtonClipboard);
             this.Controls.Add(this.flatButtonDodaj);
@@ -158,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -171,5 +187,6 @@
         private Klase.FlatButton flatButtonClipboard;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Klase.FlatButton flatButtonPromjenaLozinke;
+        private System.Windows.Forms.CheckBox checkBoxSakriLozinke;
     }
 }

@@ -137,14 +137,16 @@
             // checkBoxSakriLozinke
             // 
             this.checkBoxSakriLozinke.AutoSize = true;
+            this.checkBoxSakriLozinke.BackColor = System.Drawing.Color.DarkTurquoise;
             this.checkBoxSakriLozinke.Checked = true;
             this.checkBoxSakriLozinke.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSakriLozinke.Location = new System.Drawing.Point(213, 43);
+            this.checkBoxSakriLozinke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxSakriLozinke.Location = new System.Drawing.Point(213, 35);
             this.checkBoxSakriLozinke.Name = "checkBoxSakriLozinke";
-            this.checkBoxSakriLozinke.Size = new System.Drawing.Size(110, 21);
+            this.checkBoxSakriLozinke.Size = new System.Drawing.Size(149, 29);
             this.checkBoxSakriLozinke.TabIndex = 23;
-            this.checkBoxSakriLozinke.Text = "Sakri lozinke";
-            this.checkBoxSakriLozinke.UseVisualStyleBackColor = true;
+            this.checkBoxSakriLozinke.Text = "Sakrij lozinke";
+            this.checkBoxSakriLozinke.UseVisualStyleBackColor = false;
             this.checkBoxSakriLozinke.CheckedChanged += new System.EventHandler(this.checkBoxSakriLozinke_CheckedChanged);
             // 
             // Lozinke

@@ -39,8 +39,7 @@ namespace PassLock
             mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
             OsvjeziPodatke(mojaKonekcija.conn);
             mojaKonekcija.ZatvoriKonekciju();
-
-            dgvPodaci.Columns[2].Visible = false;
+            dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.White;
         }
         private void OsvjeziPodatke(SQLiteConnection conn)
         {
@@ -153,19 +152,14 @@ namespace PassLock
         private void checkBoxSakriLozinke_CheckedChanged(object sender, EventArgs e)
         {
             bool stanje = checkBoxSakriLozinke.Checked;
-
-            dgvPodaci.Columns[2].Visible = !stanje;
-
-            /* Ovako gore sam ja napravio, to je to, nisam uspio *** staviti umjesto slova, treba se koristiti nesto CellsFormatting
-             * a ovo dolje je isto jedan nacin, ali se onda vidi sifra za oznaceni red.
-                DataGridViewCellStyle style = new DataGridViewCellStyle();
-
-                style.Font = new Font(dataGridView.Font, FontStyle.Bold);
-                ili
-                style.ForeColor=Color.White;
-
-                dataGridView.Rows[0].DefaultCellStyle = style;
-            */
+            if (stanje)
+            {
+                dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.White;
+            }
+            else
+            {
+                dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.Black;
+            }
         }
     }
 }

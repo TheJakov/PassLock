@@ -39,7 +39,9 @@ namespace PassLock
             mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
             OsvjeziPodatke(mojaKonekcija.conn);
             mojaKonekcija.ZatvoriKonekciju();
+            dgvPodaci.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
             dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.White;
+            dgvPodaci.Columns[2].DefaultCellStyle.SelectionForeColor = Color.CornflowerBlue;
         }
         private void OsvjeziPodatke(SQLiteConnection conn)
         {
@@ -58,9 +60,12 @@ namespace PassLock
 
         private void dgvPodaci_SelectionChanged(object sender, EventArgs e)
         {
-            odabranaLozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
-            idPodatak = int.Parse(dgvPodaci.CurrentRow.Cells[0].Value.ToString());
-
+            try
+            {
+                odabranaLozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
+                idPodatak = int.Parse(dgvPodaci.CurrentRow.Cells[0].Value.ToString());
+            }
+            catch (Exception) { }
         }
         private void IzbrisiPodatak()
         {
@@ -155,10 +160,12 @@ namespace PassLock
             if (stanje)
             {
                 dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.White;
+                dgvPodaci.Columns[2].DefaultCellStyle.SelectionForeColor = Color.CornflowerBlue;
             }
             else
             {
                 dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.Black;
+                dgvPodaci.Columns[2].DefaultCellStyle.SelectionForeColor = Color.White;
             }
         }
     }

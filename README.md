@@ -14,3 +14,8 @@ ili društvene mreže koje koristi.
 Svrha ove aplikacije je povećanje sigurnosti na internetu, odnosno korištenje
 lozinki koje je teško probiti korištenjem nekih tipičnih 'Dictionary
 Attack' ili sličnih brute force metoda.
+
+### Korisničko sučelje
+
+
+![Slika aplikacije](Slike/9.PNG?raw=true "App preview")

@@ -33,4 +33,5 @@ Attack' ili sličnih brute force metoda.
 ### Glavni zaslon
 
 ![Slika aplikacije](Slike/6.PNG?raw=true "App preview")
-![Slika aplikacije2](Slike/9.PNG?raw=true "App preview 2")
+![Slika aplikacije2](Slike/8.PNG?raw=true "App preview 2")
+![Slika aplikacije3](Slike/9.PNG?raw=true "App preview 3")

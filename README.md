@@ -15,7 +15,22 @@ Svrha ove aplikacije je povećanje sigurnosti na internetu, odnosno korištenje
 lozinki koje je teško probiti korištenjem nekih tipičnih 'Dictionary
 Attack' ili sličnih brute force metoda.
 
-### Korisničko sučelje
+## App preview
 
+### Početni zaslon
 
-![Slika aplikacije](Slike/9.PNG?raw=true "App preview")
+![Početni_zaslon](Slike/1.PNG?raw=true "App start")
+
+#### a) Izradi novu bazu
+
+![Izradi_novu](Slike/2.PNG?raw=true "App new database")
+
+#### b) Otvori postojeću
+
+![Otvori_postojecu](Slike/12.PNG?raw=true "App existing database")
+![Otvori_postojecu2](Slike/13.PNG?raw=true "App existing database 2")
+
+### Glavni zaslon
+
+![Slika aplikacije](Slike/6.PNG?raw=true "App preview")
+![Slika aplikacije2](Slike/9.PNG?raw=true "App preview 2")

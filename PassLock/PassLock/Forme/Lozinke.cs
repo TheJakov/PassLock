@@ -59,39 +59,11 @@ namespace PassLock
 
         private void flatButtonNoIzbrisi_Click(object sender, EventArgs e)
         {
-            string nazivLozinke;
-            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out idPodatak))
-            {
-                nazivLozinke = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
-                if (MessageBox.Show("Želite li stvarno obrisati lozinku sa sifrom: " + idPodatak + " i nazivom " + nazivLozinke + " ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    IzbrisiPodatak();
-                    OsvjeziPodatke(mojaKonekcija.conn);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            IzbrisiLozinku();
         }
         private void flatButtonIzmjeni_Click(object sender, EventArgs e)
         {
-            Podatak mojPodatak = new Podatak();
-            int rBr;
-            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out rBr))
-            {
-                mojPodatak.RedniBroj = rBr;
-                mojPodatak.Naziv = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
-                mojPodatak.Lozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
-
-                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(mojPodatak);
-                formaIzmjeni.ShowDialog();
-                OsvjeziPodatke(mojaKonekcija.conn);
-            }
-            else
-            {
-                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            IzmijeniLozinku();
         }
         private void flatButtonDodaj_Click(object sender, EventArgs e)
         {
@@ -139,6 +111,31 @@ namespace PassLock
                 throw ex;
             }
         }
+
+        private void IzmijeniPodatak(object sender, EventArgs e)
+        {
+            try
+            {
+                IzmijeniLozinku();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void IzbrisiLozinkuEvent(object senderm, EventArgs e)
+        {
+            try
+            {
+                IzbrisiLozinku();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void Lozinke_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
@@ -168,7 +165,49 @@ namespace PassLock
             dgvPodaci.Columns[2].Width = 336;
         }
 
-        
+        private void IzmijeniLozinku()
+        {
+            if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out int rBr))
+            {
+                Podatak mojPodatak = new Podatak();
+                mojPodatak.RedniBroj = rBr;
+                mojPodatak.Naziv = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
+                mojPodatak.Lozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
+
+                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(mojPodatak);
+                formaIzmjeni.ShowDialog();
+                OsvjeziPodatke(mojaKonekcija.conn);
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void IzbrisiLozinku()
+        {
+            try
+            {
+                if (int.TryParse(dgvPodaci.CurrentRow.Cells[0].Value.ToString(), out idPodatak))
+                {
+                    string nazivLozinke = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
+                    if (MessageBox.Show("Želite li stvarno obrisati lozinku sa sifrom: " + idPodatak + " i nazivom " + nazivLozinke + " ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        IzbrisiPodatak();
+                        OsvjeziPodatke(mojaKonekcija.conn);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Niste odabrali niti jednu lozinku !", "Pažnja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void IzbrisiPodatak()
         {
             mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
@@ -202,6 +241,16 @@ namespace PassLock
                 var cmsKopirajLozinku = dgvPodaci.ContextMenuStrip.Items.Add("Kopiraj lozinku");
                 cmsKopirajLozinku.Name = "KopirajLozinku";
                 cmsKopirajLozinku.Click += new EventHandler(KopirajLozinku);
+
+                // Izmijeni lozinku
+                var cmsIzmjeniLozinku = dgvPodaci.ContextMenuStrip.Items.Add("Izmijeni lozinku");
+                cmsIzmjeniLozinku.Name = "IzmijeniLozinku";
+                cmsIzmjeniLozinku.Click += new EventHandler(IzmijeniPodatak);
+
+                // Izbrisi lozinku
+                var cmsIzbrisiLozinku = dgvPodaci.ContextMenuStrip.Items.Add("Izbriši lozinku");
+                cmsIzbrisiLozinku.Name = "IzbrisiLozinku";
+                cmsIzbrisiLozinku.Click += new EventHandler(IzbrisiLozinkuEvent);
             }
             catch (Exception ex)
             {

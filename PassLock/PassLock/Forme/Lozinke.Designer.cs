@@ -90,12 +90,12 @@
             // 
             this.flatButtonPromjenaLozinke.BorderThickness = 2F;
             this.flatButtonPromjenaLozinke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flatButtonPromjenaLozinke.Location = new System.Drawing.Point(573, 20);
+            this.flatButtonPromjenaLozinke.Location = new System.Drawing.Point(529, 20);
             this.flatButtonPromjenaLozinke.Margin = new System.Windows.Forms.Padding(2);
             this.flatButtonPromjenaLozinke.Name = "flatButtonPromjenaLozinke";
-            this.flatButtonPromjenaLozinke.Size = new System.Drawing.Size(94, 32);
+            this.flatButtonPromjenaLozinke.Size = new System.Drawing.Size(138, 32);
             this.flatButtonPromjenaLozinke.TabIndex = 22;
-            this.flatButtonPromjenaLozinke.Text = "PROMIJENI LOZINKU";
+            this.flatButtonPromjenaLozinke.Text = "PROMIJENI GLAVNU LOZINKU";
             this.flatButtonPromjenaLozinke.Click += new System.EventHandler(this.flatButtonPromjenaLozinke_Click);
             // 
             // flatButtonClipboard

@@ -17,12 +17,15 @@ namespace PassLock
     {
         Konekcija mojaKonekcija = new Konekcija();
 
+        #region Members
         private string lozinka;
         private string putanja;
 
         private string odabranaLozinka;
         private int idPodatak;
+        #endregion
 
+        #region Constructors
         public Lozinke()
         {
             InitializeComponent();
@@ -33,7 +36,9 @@ namespace PassLock
             this.lozinka = lozinka;
             this.putanja = putanja;
         }
+        #endregion
 
+        #region Events
         private void Lozinke_Load(object sender, EventArgs e)
         {
             mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
@@ -42,22 +47,9 @@ namespace PassLock
             dgvPodaci.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
             dgvPodaci.Columns[2].DefaultCellStyle.ForeColor = Color.White;
             dgvPodaci.Columns[2].DefaultCellStyle.SelectionForeColor = Color.CornflowerBlue;
-        }
-        private void OsvjeziPodatke(SQLiteConnection conn)
-        {
-            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM podaci", conn);
-            DataSet ds = new DataSet();
 
-            dataAdapter.Fill(ds, "Info");
-            dgvPodaci.DataSource = ds.Tables[0];
-            dgvPodaci.Columns[0].HeaderText = "Redni broj";
-            dgvPodaci.Columns[0].Width = 89;
-            dgvPodaci.Columns[1].HeaderText = "Naziv";
-            dgvPodaci.Columns[1].Width = 139;
-            dgvPodaci.Columns[2].HeaderText = "Lozinka";
-            dgvPodaci.Columns[2].Width = 336;
+            PostaviContextMeniIteme();
         }
-
         private void dgvPodaci_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -67,29 +59,6 @@ namespace PassLock
             }
             catch (Exception) { }
         }
-        private void IzbrisiPodatak()
-        {
-            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
-            try
-            {
-                //pokusaj pristupa podacima
-                string sql1 = "SELECT * FROM podaci";
-                SQLiteCommand command1 = new SQLiteCommand(sql1, mojaKonekcija.conn);
-                command1.ExecuteNonQuery();
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show("Greška kod pristupa podacima!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            //enkripcija
-
-            string sqlDelete = "DELETE FROM podaci WHERE id = " + idPodatak + ";";
-            SQLiteCommand command = new SQLiteCommand(sqlDelete, mojaKonekcija.conn);
-            command.ExecuteNonQuery();
-
-            mojaKonekcija.ZatvoriKonekciju();
-        }
-
         private void flatButtonOdjaviSe_Click(object sender, EventArgs e)
         {
             Form1 pocetnaForma = new Form1();
@@ -150,7 +119,7 @@ namespace PassLock
 
         private void flatButtonPromjenaLozinke_Click(object sender, EventArgs e)
         {
-            PromjenaLozinkeBaze promjenaLozinkeBaze = new PromjenaLozinkeBaze(putanja,lozinka);
+            PromjenaLozinkeBaze promjenaLozinkeBaze = new PromjenaLozinkeBaze(putanja, lozinka);
             promjenaLozinkeBaze.Show();
         }
 
@@ -168,5 +137,91 @@ namespace PassLock
                 dgvPodaci.Columns[2].DefaultCellStyle.SelectionForeColor = Color.White;
             }
         }
+
+        private void KopirajLozinku(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetText(odabranaLozinka);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Private methods
+        private void OsvjeziPodatke(SQLiteConnection conn)
+        {
+            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM podaci", conn);
+            DataSet ds = new DataSet();
+
+            dataAdapter.Fill(ds, "Info");
+            dgvPodaci.DataSource = ds.Tables[0];
+            dgvPodaci.Columns[0].HeaderText = "Redni broj";
+            dgvPodaci.Columns[0].Width = 89;
+            dgvPodaci.Columns[1].HeaderText = "Naziv";
+            dgvPodaci.Columns[1].Width = 139;
+            dgvPodaci.Columns[2].HeaderText = "Lozinka";
+            dgvPodaci.Columns[2].Width = 336;
+        }
+
+        
+        private void IzbrisiPodatak()
+        {
+            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            try
+            {
+                //pokusaj pristupa podacima
+                string sql1 = "SELECT * FROM podaci";
+                SQLiteCommand command1 = new SQLiteCommand(sql1, mojaKonekcija.conn);
+                command1.ExecuteNonQuery();
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Greška kod pristupa podacima!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //enkripcija
+
+            string sqlDelete = "DELETE FROM podaci WHERE id = " + idPodatak + ";";
+            SQLiteCommand command = new SQLiteCommand(sqlDelete, mojaKonekcija.conn);
+            command.ExecuteNonQuery();
+
+            mojaKonekcija.ZatvoriKonekciju();
+        }
+
+        private void PostaviContextMeniIteme()
+        {
+            try
+            {
+                InicijalizirajContextMenuStrip(dgvPodaci);
+
+                // Kopiraj lozinku
+                var cmsKopirajLozinku = dgvPodaci.ContextMenuStrip.Items.Add("Kopiraj lozinku");
+                cmsKopirajLozinku.Name = "KopirajLozinku";
+                cmsKopirajLozinku.Click += new EventHandler(KopirajLozinku);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void InicijalizirajContextMenuStrip(DataGridView grid)
+        {
+            try
+            {
+                if(grid.ContextMenuStrip == null)
+                {
+                    grid.ContextMenuStrip = new ContextMenuStrip();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
     }
 }

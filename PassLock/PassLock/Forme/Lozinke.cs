@@ -25,6 +25,7 @@ namespace PassLock
         public Lozinke()
         {
             InitializeComponent();
+            timerMeduspremnik.Tick += new EventHandler(KorakTimera);
         }
         #endregion
 
@@ -39,6 +40,9 @@ namespace PassLock
             dgvPodaci.Columns[2].DefaultCellStyle.SelectionForeColor = Color.CornflowerBlue;
 
             PostaviContextMeniIteme();
+
+            pBarMeduspremnik.Visible = false;
+            lblBrisanjeMeduspremnik.Visible = false;
         }
         private void dgvPodaci_SelectionChanged(object sender, EventArgs e)
         {
@@ -76,7 +80,7 @@ namespace PassLock
         }
         private void flatButtonClipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(odabranaLozinka);
+            KopirajLozinkuUMeduspremnik(odabranaLozinka);
         }
 
         private void flatButtonPromjenaLozinke_Click(object sender, EventArgs e)
@@ -104,7 +108,7 @@ namespace PassLock
         {
             try
             {
-                Clipboard.SetText(odabranaLozinka);
+                KopirajLozinkuUMeduspremnik(odabranaLozinka);
             }
             catch (Exception ex)
             {
@@ -141,6 +145,7 @@ namespace PassLock
             try
             {
                 Sesija.ObrisiPodatkeOSesiji();
+                timerMeduspremnik.Tick -= KorakTimera;
             }
             catch (Exception ex)
             {
@@ -163,6 +168,66 @@ namespace PassLock
             dgvPodaci.Columns[1].Width = 139;
             dgvPodaci.Columns[2].HeaderText = "Lozinka";
             dgvPodaci.Columns[2].Width = 336;
+        }
+
+        private void KopirajLozinkuUMeduspremnik(string lozinka)
+        {
+            try
+            {
+                Clipboard.SetText(lozinka);
+                OcistiMeduspremnik(12);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void OcistiMeduspremnik(int brojSekundi)
+        {
+            try
+            {
+                if (timerMeduspremnik.Enabled)
+                    timerMeduspremnik.Stop();
+
+                lblBrisanjeMeduspremnik.Visible = true;
+                pBarMeduspremnik.Visible = true;
+
+                pBarMeduspremnik.Minimum = 1;
+                pBarMeduspremnik.Maximum = brojSekundi;
+                pBarMeduspremnik.Value = brojSekundi;
+                pBarMeduspremnik.Step = -1;
+
+                timerMeduspremnik.Interval = 1000;
+                timerMeduspremnik.Start();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void KorakTimera(object sender, EventArgs e)
+        {
+            try
+            {
+                if (pBarMeduspremnik.Value != pBarMeduspremnik.Minimum)
+                {
+                    pBarMeduspremnik.PerformStep();
+                    lblBrisanjeMeduspremnik.Text = $"Brisanje lozinke iz međuspremnika {pBarMeduspremnik.Value}s";  
+                }
+                else
+                {
+                    Clipboard.Clear();
+                    timerMeduspremnik.Stop();
+                    lblBrisanjeMeduspremnik.Visible = false;
+                    pBarMeduspremnik.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void IzmijeniLozinku()

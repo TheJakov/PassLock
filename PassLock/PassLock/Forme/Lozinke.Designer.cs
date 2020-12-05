@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lozinke));
             this.dgvPodaci = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBoxSakriLozinke = new System.Windows.Forms.CheckBox();
+            this.pBarMeduspremnik = new System.Windows.Forms.ProgressBar();
+            this.lblBrisanjeMeduspremnik = new System.Windows.Forms.Label();
+            this.timerMeduspremnik = new System.Windows.Forms.Timer(this.components);
             this.flatButtonPromjenaLozinke = new PassLock.Klase.FlatButton();
             this.flatButtonClipboard = new PassLock.Klase.FlatButton();
             this.flatButtonDodaj = new PassLock.Klase.FlatButtonYes();
@@ -49,7 +53,7 @@
             this.dgvPodaci.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dgvPodaci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPodaci.Location = new System.Drawing.Point(160, 57);
-            this.dgvPodaci.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPodaci.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPodaci.MultiSelect = false;
             this.dgvPodaci.Name = "dgvPodaci";
             this.dgvPodaci.ReadOnly = true;
@@ -63,7 +67,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-280, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(794, 472);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,13 +82,31 @@
             this.checkBoxSakriLozinke.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxSakriLozinke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxSakriLozinke.Location = new System.Drawing.Point(160, 34);
-            this.checkBoxSakriLozinke.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxSakriLozinke.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxSakriLozinke.Name = "checkBoxSakriLozinke";
             this.checkBoxSakriLozinke.Size = new System.Drawing.Size(135, 19);
             this.checkBoxSakriLozinke.TabIndex = 23;
             this.checkBoxSakriLozinke.Text = "SAKRIJ LOZINKE";
             this.checkBoxSakriLozinke.UseVisualStyleBackColor = false;
             this.checkBoxSakriLozinke.CheckedChanged += new System.EventHandler(this.checkBoxSakriLozinke_CheckedChanged);
+            // 
+            // pBarMeduspremnik
+            // 
+            this.pBarMeduspremnik.Location = new System.Drawing.Point(519, 444);
+            this.pBarMeduspremnik.Name = "pBarMeduspremnik";
+            this.pBarMeduspremnik.Size = new System.Drawing.Size(246, 15);
+            this.pBarMeduspremnik.TabIndex = 24;
+            // 
+            // lblBrisanjeMeduspremnik
+            // 
+            this.lblBrisanjeMeduspremnik.AutoSize = true;
+            this.lblBrisanjeMeduspremnik.BackColor = System.Drawing.Color.Gold;
+            this.lblBrisanjeMeduspremnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrisanjeMeduspremnik.Location = new System.Drawing.Point(291, 445);
+            this.lblBrisanjeMeduspremnik.Name = "lblBrisanjeMeduspremnik";
+            this.lblBrisanjeMeduspremnik.Size = new System.Drawing.Size(201, 13);
+            this.lblBrisanjeMeduspremnik.TabIndex = 25;
+            this.lblBrisanjeMeduspremnik.Text = "Brisanje lozinke iz međuspremnika";
             // 
             // flatButtonPromjenaLozinke
             // 
@@ -164,6 +186,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(777, 466);
+            this.Controls.Add(this.lblBrisanjeMeduspremnik);
+            this.Controls.Add(this.pBarMeduspremnik);
             this.Controls.Add(this.checkBoxSakriLozinke);
             this.Controls.Add(this.flatButtonPromjenaLozinke);
             this.Controls.Add(this.flatButtonClipboard);
@@ -174,7 +198,7 @@
             this.Controls.Add(this.dgvPodaci);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(793, 505);
             this.MinimumSize = new System.Drawing.Size(793, 505);
@@ -201,5 +225,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Klase.FlatButton flatButtonPromjenaLozinke;
         private System.Windows.Forms.CheckBox checkBoxSakriLozinke;
+        private System.Windows.Forms.ProgressBar pBarMeduspremnik;
+        private System.Windows.Forms.Label lblBrisanjeMeduspremnik;
+        private System.Windows.Forms.Timer timerMeduspremnik;
     }
 }

@@ -33,8 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka2 = new System.Windows.Forms.TextBox();
-            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
-            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new global::PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new global::PassLock.Klase.FlatButtonNo();
             this.SuspendLayout();
             // 
             // txtLozinka1

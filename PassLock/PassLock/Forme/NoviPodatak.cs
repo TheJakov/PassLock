@@ -16,22 +16,21 @@ namespace PassLock.Forme
 {
     public partial class NoviPodatak : Form
     {
+        #region Members
         Konekcija mojaKonekcija = new Konekcija();
         Enkripcija enkriptor = new Enkripcija();
 
-        private string lozinka;
-        private string putanja;
         private int duljinaLozinke = 64;
+        #endregion
+
+        #region Constructors
         public NoviPodatak()
         {
             InitializeComponent();
         }
-        public NoviPodatak(string lozinka, string putanja)
-        {
-            InitializeComponent();
-            this.lozinka = lozinka;
-            this.putanja = putanja;
-        }
+        #endregion
+
+        #region Events
         private void trackBarDuljinaLozinke_ValueChanged(object sender, EventArgs e)
         {
             labelDuljinaZnakova.Text = trackBarDuljinaLozinke.Value.ToString();
@@ -40,7 +39,7 @@ namespace PassLock.Forme
 
         private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
-            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
             try
             {
                 //pokusaj pristupa podacima
@@ -48,7 +47,7 @@ namespace PassLock.Forme
                 SQLiteCommand command1 = new SQLiteCommand(sql1, mojaKonekcija.conn);
                 command1.ExecuteNonQuery();
             }
-            catch (SQLiteException ex)
+            catch (SQLiteException)
             {
                 MessageBox.Show("Greška kod pristupa podacima!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNaziv.Clear();
@@ -68,5 +67,6 @@ namespace PassLock.Forme
         {
             Close();
         }
+        #endregion
     }
 }

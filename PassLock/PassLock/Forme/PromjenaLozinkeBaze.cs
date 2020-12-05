@@ -13,25 +13,25 @@ namespace PassLock.Forme
 {
     public partial class PromjenaLozinkeBaze : Form
     {
-        private string putanja;
-        private string lozinka;
-
+        #region Members
         Konekcija mojaKonekcija = new Konekcija();
+        #endregion
 
-        public PromjenaLozinkeBaze(string putanja, string lozinka)
+        #region Constructors
+        public PromjenaLozinkeBaze()
         {
             InitializeComponent();
-            this.putanja = putanja;
-            this.lozinka = lozinka;
         }
+        #endregion
 
+        #region Events
         private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
             if (txtLozinka1.Text == txtLozinka2.Text && txtLozinka1.Text.Length>=8)
             {
                 if (MessageBox.Show("Želite li stvarno promijeniti lozinku ?", "Pozor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+                    mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
                     mojaKonekcija.PromjenaLozinke(txtLozinka1.Text.ToString());
                     mojaKonekcija.ZatvoriKonekciju();
                     MessageBox.Show("Uspješno izmijenjena lozinka !","Obavijest");
@@ -54,5 +54,6 @@ namespace PassLock.Forme
         {
             this.Close();
         }
+        #endregion
     }
 }

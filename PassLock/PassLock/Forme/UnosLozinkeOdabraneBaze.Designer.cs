@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnosLozinkeOdabraneBaze));
             this.label1 = new System.Windows.Forms.Label();
             this.txtLozinka = new System.Windows.Forms.TextBox();
-            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
-            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new global::PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new global::PassLock.Klase.FlatButtonYes();
             this.SuspendLayout();
             // 
             // label1

@@ -15,33 +15,36 @@ namespace PassLock.Forme
 {
     public partial class IzmjeniPodatak : Form
     {
+        #region Members
         Konekcija mojaKonekcija = new Konekcija();
         Enkripcija enkriptor = new Enkripcija();
-        private string lozinka;
-        private string putanja;
         Podatak mojPodatak;
+        #endregion
+
+        #region Constructors
         public IzmjeniPodatak()
         {
             InitializeComponent();
         }
-        public IzmjeniPodatak(string lozinka, string putanja, Podatak podatak)
+        public IzmjeniPodatak(Podatak podatak)
         {
             InitializeComponent();
-            this.lozinka = lozinka;
-            this.putanja = putanja;
             mojPodatak = podatak;
 
             txtRedniBroj.Text = mojPodatak.RedniBroj.ToString();
             txtNaziv.Text = mojPodatak.Naziv;
             txtLozinka.Text = mojPodatak.Lozinka;
         }
+        #endregion
+
+        #region Events
         private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
             if (txtNaziv.Text.Length > 0)
             {
                 if (txtLozinka.Text.Length > 0)
                 {
-                    mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+                    mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
                     try
                     {
                         //pokusaj pristupa podacima
@@ -49,7 +52,7 @@ namespace PassLock.Forme
                         SQLiteCommand command1 = new SQLiteCommand(sql1, mojaKonekcija.conn);
                         command1.ExecuteNonQuery();
                     }
-                    catch (SQLiteException ex)
+                    catch (SQLiteException)
                     {
                         MessageBox.Show("Greška kod pristupa podacima!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtNaziv.Clear();
@@ -84,5 +87,6 @@ namespace PassLock.Forme
         {
             this.Close();
         }
+        #endregion
     }
 }

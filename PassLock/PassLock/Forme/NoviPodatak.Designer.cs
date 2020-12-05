@@ -36,8 +36,8 @@
             this.trackBarDuljinaLozinke = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.labelDuljinaZnakova = new System.Windows.Forms.Label();
-            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
-            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new global::PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new global::PassLock.Klase.FlatButtonYes();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDuljinaLozinke)).BeginInit();
             this.SuspendLayout();
             // 

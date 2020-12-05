@@ -15,19 +15,24 @@ namespace PassLock.Forme
 {
     public partial class UnosLozinkeOdabraneBaze : Form
     {
+        #region Members
         Konekcija mojaKonekcija = new Konekcija();
-        private string putanja;
-        public UnosLozinkeOdabraneBaze(string putanja)
+        #endregion
+
+        #region Constructors
+        public UnosLozinkeOdabraneBaze()
         {
             InitializeComponent();
-            this.putanja = putanja;
         }
+        #endregion
+
+        #region Events
         private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
-            string lozinka = txtLozinka.Text;
-            if (lozinka.Length != 0)
+            Sesija.Lozinka = txtLozinka.Text;
+            if (Sesija.Lozinka.Length != 0)
             {
-                mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+                mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
                 try
                 {
                     //pokusaj pristupa podacima
@@ -36,12 +41,12 @@ namespace PassLock.Forme
                     command.ExecuteNonQuery();
                     mojaKonekcija.conn.Close();
 
-                    Lozinke novaForma = new Lozinke(lozinka, putanja);
+                    Lozinke novaForma = new Lozinke();
                     this.Hide();
                     novaForma.ShowDialog();
                     this.Close();
                 }
-                catch (SQLiteException ex)
+                catch (SQLiteException)
                 {
                     MessageBox.Show("Krivu lozinku ste upisali!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtLozinka.Clear();
@@ -56,10 +61,11 @@ namespace PassLock.Forme
 
         private void flatButtonOdustani_Click(object sender, EventArgs e)
         {
-            Form1 pocetnaForma = new Form1();
+            PassLockEkran pocetnaForma = new PassLockEkran();
             this.Hide();
             pocetnaForma.ShowDialog();
             this.Close();
         }
+        #endregion
     }
 }

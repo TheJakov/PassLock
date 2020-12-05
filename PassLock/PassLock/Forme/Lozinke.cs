@@ -15,12 +15,8 @@ namespace PassLock
 {
     public partial class Lozinke : Form
     {
-        Konekcija mojaKonekcija = new Konekcija();
-
         #region Members
-        private string lozinka;
-        private string putanja;
-
+        Konekcija mojaKonekcija = new Konekcija();
         private string odabranaLozinka;
         private int idPodatak;
         #endregion
@@ -30,18 +26,12 @@ namespace PassLock
         {
             InitializeComponent();
         }
-        public Lozinke(string lozinka, string putanja)
-        {
-            InitializeComponent();
-            this.lozinka = lozinka;
-            this.putanja = putanja;
-        }
         #endregion
 
         #region Events
         private void Lozinke_Load(object sender, EventArgs e)
         {
-            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
             OsvjeziPodatke(mojaKonekcija.conn);
             mojaKonekcija.ZatvoriKonekciju();
             dgvPodaci.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
@@ -61,7 +51,7 @@ namespace PassLock
         }
         private void flatButtonOdjaviSe_Click(object sender, EventArgs e)
         {
-            Form1 pocetnaForma = new Form1();
+            PassLockEkran pocetnaForma = new PassLockEkran();
             this.Hide();
             pocetnaForma.ShowDialog();
             this.Close();
@@ -94,7 +84,7 @@ namespace PassLock
                 mojPodatak.Naziv = dgvPodaci.CurrentRow.Cells[1].Value.ToString();
                 mojPodatak.Lozinka = dgvPodaci.CurrentRow.Cells[2].Value.ToString();
 
-                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(lozinka, putanja, mojPodatak);
+                IzmjeniPodatak formaIzmjeni = new IzmjeniPodatak(mojPodatak);
                 formaIzmjeni.ShowDialog();
                 OsvjeziPodatke(mojaKonekcija.conn);
             }
@@ -105,10 +95,10 @@ namespace PassLock
         }
         private void flatButtonDodaj_Click(object sender, EventArgs e)
         {
-            NoviPodatak noviPodatak = new NoviPodatak(lozinka, putanja);
+            NoviPodatak noviPodatak = new NoviPodatak();
             noviPodatak.ShowDialog();
 
-            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
             OsvjeziPodatke(mojaKonekcija.conn);
             mojaKonekcija.ZatvoriKonekciju();
         }
@@ -119,7 +109,7 @@ namespace PassLock
 
         private void flatButtonPromjenaLozinke_Click(object sender, EventArgs e)
         {
-            PromjenaLozinkeBaze promjenaLozinkeBaze = new PromjenaLozinkeBaze(putanja, lozinka);
+            PromjenaLozinkeBaze promjenaLozinkeBaze = new PromjenaLozinkeBaze();
             promjenaLozinkeBaze.Show();
         }
 
@@ -149,6 +139,17 @@ namespace PassLock
                 throw ex;
             }
         }
+        private void Lozinke_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                Sesija.ObrisiPodatkeOSesiji();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
         #region Private methods
@@ -170,7 +171,7 @@ namespace PassLock
         
         private void IzbrisiPodatak()
         {
-            mojaKonekcija.OtvoriKonekciju(putanja, lozinka);
+            mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
             try
             {
                 //pokusaj pristupa podacima
@@ -178,7 +179,7 @@ namespace PassLock
                 SQLiteCommand command1 = new SQLiteCommand(sql1, mojaKonekcija.conn);
                 command1.ExecuteNonQuery();
             }
-            catch (SQLiteException ex)
+            catch (SQLiteException)
             {
                 MessageBox.Show("Greška kod pristupa podacima!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

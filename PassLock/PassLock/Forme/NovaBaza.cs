@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PassLock.Klase;
 
 namespace PassLock.Forme
 {
@@ -31,9 +32,10 @@ namespace PassLock.Forme
                 {
                     SQLiteConnection.CreateFile(saveFileDialog.FileName);
 
-                    string putanja = Path.GetFullPath(saveFileDialog.FileName).ToString();
+                    Sesija.Putanja = Path.GetFullPath(saveFileDialog.FileName).ToString();
+                    Sesija.Lozinka = txtLozinka1.Text;
 
-                    SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + putanja + ";Version=3");
+                    SQLiteConnection konekcija = new SQLiteConnection("Data Source=" + Sesija.Putanja + ";Version=3");
                     konekcija.SetPassword(txtLozinka1.Text);
                     konekcija.Open();
 
@@ -43,7 +45,7 @@ namespace PassLock.Forme
                     command.ExecuteNonQuery();
                     konekcija.Close();
 
-                    Lozinke formaLozinke = new Lozinke(txtLozinka1.Text, putanja);
+                    Lozinke formaLozinke = new Lozinke();
                     this.Hide();
                     formaLozinke.ShowDialog();
                     this.Close();
@@ -62,7 +64,7 @@ namespace PassLock.Forme
         }
         private void flatButtonOdustani_Click(object sender, EventArgs e)
         {
-            Form1 pocetnaForma = new Form1();
+            PassLockEkran pocetnaForma = new PassLockEkran();
             this.Hide();
             pocetnaForma.ShowDialog();
             this.Close();

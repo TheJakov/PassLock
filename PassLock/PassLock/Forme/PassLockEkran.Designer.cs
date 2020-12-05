@@ -1,6 +1,6 @@
 ﻿namespace PassLock
 {
-    partial class Form1
+    partial class PassLockEkran
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PassLockEkran));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flatButtonOtvoriBazu = new PassLock.Klase.FlatButton();
-            this.flatButtonNovaBaza = new PassLock.Klase.FlatButton();
+            this.flatButtonOtvoriBazu = new global::PassLock.Klase.FlatButton();
+            this.flatButtonNovaBaza = new global::PassLock.Klase.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();

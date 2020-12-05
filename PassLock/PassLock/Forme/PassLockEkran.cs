@@ -15,12 +15,17 @@ using PassLock.Forme;
 
 namespace PassLock
 {
-    public partial class Form1 : Form
+    public partial class PassLockEkran : Form
     {
-        public Form1()
+        #region Constructors
+        public PassLockEkran()
         {
             InitializeComponent();
+            Sesija.InicijalizirajNovuSesiju();
         }
+        #endregion
+
+        #region Events
         private void flatButtonOtvoriBazu_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -29,13 +34,12 @@ namespace PassLock
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string putanja = Path.GetFullPath(openFileDialog1.FileName).ToString();
+                Sesija.Putanja = Path.GetFullPath(openFileDialog1.FileName).ToString();
 
-                Forme.UnosLozinkeOdabraneBaze novaForma = new Forme.UnosLozinkeOdabraneBaze(putanja);
+                Forme.UnosLozinkeOdabraneBaze novaForma = new Forme.UnosLozinkeOdabraneBaze();
                 this.Hide();
                 novaForma.ShowDialog();
                 this.Close();
-
             }
         }
         private void flatButtonNovaBaza_Click(object sender, EventArgs e)
@@ -45,5 +49,6 @@ namespace PassLock
             novaBaza.ShowDialog();
             this.Close();
         }
+        #endregion
     }
 }

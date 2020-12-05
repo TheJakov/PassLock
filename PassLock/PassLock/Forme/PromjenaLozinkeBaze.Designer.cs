@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PromjenaLozinkeBaze));
-            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
-            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new global::PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new global::PassLock.Klase.FlatButtonYes();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();

@@ -36,12 +36,12 @@
             this.pBarMeduspremnik = new System.Windows.Forms.ProgressBar();
             this.lblBrisanjeMeduspremnik = new System.Windows.Forms.Label();
             this.timerMeduspremnik = new System.Windows.Forms.Timer(this.components);
-            this.flatButtonPromjenaLozinke = new PassLock.Klase.FlatButton();
-            this.flatButtonClipboard = new PassLock.Klase.FlatButton();
-            this.flatButtonDodaj = new PassLock.Klase.FlatButtonYes();
-            this.flatButtonIzmjeni = new PassLock.Klase.FlatButton();
-            this.flatButtonNoIzbrisi = new PassLock.Klase.FlatButtonNo();
-            this.flatButtonOdjaviSe = new PassLock.Klase.FlatButtonNo();
+            this.flatButtonPromjenaLozinke = new PassLock.Kontrole.FlatButton();
+            this.flatButtonClipboard = new PassLock.Kontrole.FlatButton();
+            this.flatButtonDodaj = new PassLock.Kontrole.FlatButtonYes();
+            this.flatButtonIzmjeni = new PassLock.Kontrole.FlatButton();
+            this.flatButtonNoIzbrisi = new PassLock.Kontrole.FlatButtonNo();
+            this.flatButtonOdjaviSe = new PassLock.Kontrole.FlatButtonNo();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPodaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -217,13 +217,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPodaci;
-        private Klase.FlatButtonNo flatButtonOdjaviSe;
-        private Klase.FlatButtonNo flatButtonNoIzbrisi;
-        private Klase.FlatButton flatButtonIzmjeni;
-        private Klase.FlatButtonYes flatButtonDodaj;
-        private Klase.FlatButton flatButtonClipboard;
+        private Kontrole.FlatButtonNo flatButtonOdjaviSe;
+        private Kontrole.FlatButtonNo flatButtonNoIzbrisi;
+        private Kontrole.FlatButton flatButtonIzmjeni;
+        private Kontrole.FlatButtonYes flatButtonDodaj;
+        private Kontrole.FlatButton flatButtonClipboard;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Klase.FlatButton flatButtonPromjenaLozinke;
+        private Kontrole.FlatButton flatButtonPromjenaLozinke;
         private System.Windows.Forms.CheckBox checkBoxSakriLozinke;
         private System.Windows.Forms.ProgressBar pBarMeduspremnik;
         private System.Windows.Forms.Label lblBrisanjeMeduspremnik;

@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtRedniBroj = new System.Windows.Forms.TextBox();
             this.checkBoxEnkriptiraj = new System.Windows.Forms.CheckBox();
-            this.flatButtonPotvrdi = new global::PassLock.Klase.FlatButtonYes();
-            this.flatButtonOdustani = new global::PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new global::PassLock.Kontrole.FlatButtonYes();
+            this.flatButtonOdustani = new global::PassLock.Kontrole.FlatButtonNo();
             this.SuspendLayout();
             // 
             // label2
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRedniBroj;
         private System.Windows.Forms.CheckBox checkBoxEnkriptiraj;
-        private Klase.FlatButtonYes flatButtonPotvrdi;
-        private Klase.FlatButtonNo flatButtonOdustani;
+        private Kontrole.FlatButtonYes flatButtonPotvrdi;
+        private Kontrole.FlatButtonNo flatButtonOdustani;
     }
 }

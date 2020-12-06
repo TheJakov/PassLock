@@ -132,13 +132,13 @@
       <DependentUpon>UnosLozinkeOdabraneBaze.cs</DependentUpon>
     </Compile>
     <Compile Include="Klase\Enkripcija.cs" />
-    <Compile Include="Klase\FlatButton.cs">
+    <Compile Include="Kontrole\FlatButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Klase\FlatButtonNo.cs">
+    <Compile Include="Kontrole\FlatButtonNo.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Klase\FlatButtonYes.cs">
+    <Compile Include="Kontrole\FlatButtonYes.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Klase\Konekcija.cs" />

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PromjenaLozinkeBaze));
-            this.flatButtonOdustani = new global::PassLock.Klase.FlatButtonNo();
-            this.flatButtonPotvrdi = new global::PassLock.Klase.FlatButtonYes();
+            this.flatButtonOdustani = new global::PassLock.Kontrole.FlatButtonNo();
+            this.flatButtonPotvrdi = new global::PassLock.Kontrole.FlatButtonYes();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLozinka2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,8 +122,8 @@
 
         #endregion
 
-        private Klase.FlatButtonNo flatButtonOdustani;
-        private Klase.FlatButtonYes flatButtonPotvrdi;
+        private Kontrole.FlatButtonNo flatButtonOdustani;
+        private Kontrole.FlatButtonYes flatButtonPotvrdi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLozinka2;
         private System.Windows.Forms.Label label1;

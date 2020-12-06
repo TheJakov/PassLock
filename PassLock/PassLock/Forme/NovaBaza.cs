@@ -53,7 +53,7 @@ namespace PassLock.Forme
             }
             else if(txtLozinka1.Text == txtLozinka2.Text && txtLozinka1.Text.Length < 8)
             {
-                MessageBox.Show("Lozinka vam je slaba ! \n \n Treba sadržavati minimalno 8 znakova !", "Pozor");
+                MessageBox.Show("Lozinka vam je slaba ! \n \n Treba sadržavati minimalno 8 znakova !", "Pozor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

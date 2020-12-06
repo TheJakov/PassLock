@@ -37,8 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelDuljinaZnakova = new System.Windows.Forms.Label();
             this.checkBoxEnkriptiraj = new System.Windows.Forms.CheckBox();
-            this.flatButtonPotvrdi = new PassLock.Klase.FlatButtonYes();
-            this.flatButtonOdustani = new PassLock.Klase.FlatButtonNo();
+            this.flatButtonPotvrdi = new PassLock.Kontrole.FlatButtonYes();
+            this.flatButtonOdustani = new PassLock.Kontrole.FlatButtonNo();
             this.lblOpcionalnoLozinka = new System.Windows.Forms.Label();
             this.lblObavezno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDuljinaLozinke)).BeginInit();
@@ -218,8 +218,8 @@
         private System.Windows.Forms.TrackBar trackBarDuljinaLozinke;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelDuljinaZnakova;
-        private Klase.FlatButtonNo flatButtonOdustani;
-        private Klase.FlatButtonYes flatButtonPotvrdi;
+        private Kontrole.FlatButtonNo flatButtonOdustani;
+        private Kontrole.FlatButtonYes flatButtonPotvrdi;
         private System.Windows.Forms.CheckBox checkBoxEnkriptiraj;
         private System.Windows.Forms.Label lblOpcionalnoLozinka;
         private System.Windows.Forms.Label lblObavezno;

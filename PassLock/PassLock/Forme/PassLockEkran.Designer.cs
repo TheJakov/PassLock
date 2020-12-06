@@ -32,8 +32,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flatButtonOtvoriBazu = new global::PassLock.Klase.FlatButton();
-            this.flatButtonNovaBaza = new global::PassLock.Klase.FlatButton();
+            this.flatButtonOtvoriBazu = new global::PassLock.Kontrole.FlatButton();
+            this.flatButtonNovaBaza = new global::PassLock.Kontrole.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -111,8 +111,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Klase.FlatButton flatButtonOtvoriBazu;
-        private Klase.FlatButton flatButtonNovaBaza;
+        private Kontrole.FlatButton flatButtonOtvoriBazu;
+        private Kontrole.FlatButton flatButtonNovaBaza;
     }
 }
 

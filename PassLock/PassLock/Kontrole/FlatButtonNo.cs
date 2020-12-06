@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PassLock.Klase
+namespace PassLock.Kontrole
 {
-    class FlatButton : Control
+    class FlatButtonNo : Control
     {
         private SolidBrush borderBrush, textBrush;
         private Rectangle borderRectangle;
@@ -18,7 +18,7 @@ namespace PassLock.Klase
         public override Cursor Cursor { get; set; } = Cursors.Hand;
         public float BorderThickness { get; set; } = 4;
 
-        public FlatButton()
+        public FlatButtonNo()
         {
             borderBrush = new SolidBrush(ColorTranslator.FromHtml("#31302b"));
             textBrush = new SolidBrush(ColorTranslator.FromHtml("#FFF"));
@@ -53,7 +53,7 @@ namespace PassLock.Klase
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
-            base.BackColor = ColorTranslator.FromHtml("#31302b");
+            base.BackColor = ColorTranslator.FromHtml("#FF332E");
             active = true;
         }
 
@@ -63,6 +63,7 @@ namespace PassLock.Klase
             base.BackColor = ColorTranslator.FromHtml("#FFF");
             active = false;
         }
-        
     }
 }
+
+

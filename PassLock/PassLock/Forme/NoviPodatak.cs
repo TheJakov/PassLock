@@ -27,6 +27,7 @@ namespace PassLock.Forme
         public NoviPodatak()
         {
             InitializeComponent();
+            checkBoxEnkriptiraj.Checked = true;
         }
         #endregion
 
@@ -39,6 +40,9 @@ namespace PassLock.Forme
 
         private void flatButtonPotvrdi_Click(object sender, EventArgs e)
         {
+            if (!ValidirajUnos())
+                return;
+
             mojaKonekcija.OtvoriKonekciju(Sesija.Putanja, Sesija.Lozinka);
             try
             {
@@ -54,8 +58,13 @@ namespace PassLock.Forme
                 txtLozinka.Clear();
             }
 
-            string kriptiranaLozinka = enkriptor.Enkriptiraj(txtLozinka.Text, duljinaLozinke);
-            string sql = "INSERT INTO podaci(naziv,lozinka) values('" + txtNaziv.Text + "','" + kriptiranaLozinka + "')";
+            string lozinkaZaSpremiti;
+            if (checkBoxEnkriptiraj.Checked)
+                lozinkaZaSpremiti = enkriptor.Enkriptiraj(txtLozinka.Text, duljinaLozinke);
+            else
+                lozinkaZaSpremiti = txtLozinka.Text;
+
+            string sql = "INSERT INTO podaci(naziv,lozinka) values('" + txtNaziv.Text + "','" + lozinkaZaSpremiti + "')";
             SQLiteCommand command = new SQLiteCommand(sql, mojaKonekcija.conn);
             command.ExecuteNonQuery();
 
@@ -66,6 +75,63 @@ namespace PassLock.Forme
         private void flatButtonOdustani_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void checkBoxEnkriptiraj_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkBoxEnkriptiraj.Checked)
+                {
+                    label3.Enabled = true;
+                    labelDuljinaZnakova.Enabled = true;
+                    trackBarDuljinaLozinke.Enabled = true;
+
+                    lblUpisiteLozinku.Text = "Dio sjemena za enkripciju:";
+                    lblOpcionalnoLozinka.Text = "(Opcionalno polje)";
+                }
+                else
+                {
+                    label3.Enabled = false;
+                    labelDuljinaZnakova.Enabled = false;
+                    trackBarDuljinaLozinke.Enabled = false;
+
+                    lblUpisiteLozinku.Text = "Upišite željenu lozinku:";
+                    lblOpcionalnoLozinka.Text = "(Obavezno polje)";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Private methods
+        private bool ValidirajUnos()
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtNaziv.Text))
+                {
+                    MessageBox.Show("Naziv je obavezno polje!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (!checkBoxEnkriptiraj.Checked)
+                {
+                    if (string.IsNullOrWhiteSpace(txtLozinka.Text))
+                    {
+                        MessageBox.Show("Lozinka je obavezno polje!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
     }
